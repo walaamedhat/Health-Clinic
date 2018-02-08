@@ -2,7 +2,7 @@ import {
   DATA_FETCH_START,
   DATA_FETCH_FAILURE,
   DATA_FETCH_SUCCESS
-} from '../constants/actionTypesDoctor';
+} from '../constants/actionTypes';
 
 const initialState = {
   data: [],
@@ -15,7 +15,6 @@ const data = (state = initialState , action) => {
     case DATA_FETCH_START: {
       return {
         ...state,
-        error: undefined,
         isFetching: true
       };
     }
@@ -35,7 +34,6 @@ const data = (state = initialState , action) => {
         isFetching: false
       };
     }
-
     default:
       return state;
 

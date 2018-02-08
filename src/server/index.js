@@ -11,8 +11,9 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
   next();
 });
-app.use(routes);
-app.get('*', (req, res) => {
+
+app.use('/api/v1',routes);
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'));
 });
 

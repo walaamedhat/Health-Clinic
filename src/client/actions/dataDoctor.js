@@ -2,7 +2,7 @@ import {
   DATA_FETCH_START,
   DATA_FETCH_SUCCESS,
   DATA_FETCH_FAILURE
-} from '../constants/actionTypesDoctor.js';
+} from '../constants/actionTypes.js';
 
 export const dataFetchStart = () => {
   return {
@@ -24,11 +24,10 @@ export const dataFetchFailure = massage => {
   };
 };
 
-export const fetchData = () => dispatch => {
+export const fetchDoctors = cityName => dispatch => {
   dispatch(dataFetchStart());
-  fetch('/doctors')
+  fetch(`/api/v1/doctors/${cityName}`)
     .then(res => {
-      console.log(res);
       if (res.status >= 400) {
         throw new Error('Bad response from sarver');
       }
