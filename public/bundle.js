@@ -24190,6 +24190,10 @@ var _Contact = __webpack_require__(101);
 
 var _Contact2 = _interopRequireDefault(_Contact);
 
+var _Footer = __webpack_require__(107);
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24217,7 +24221,8 @@ var Home = function (_Component) {
         _react2.default.createElement(_Slider2.default, null),
         _react2.default.createElement(_About2.default, null),
         _react2.default.createElement(_Doctors2.default, null),
-        _react2.default.createElement(_Contact2.default, null)
+        _react2.default.createElement(_Contact2.default, null),
+        _react2.default.createElement(_Footer2.default, null)
       );
     }
   }]);
@@ -25692,149 +25697,162 @@ var Contact = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { id: 'contactUs', className: 'contactUs' },
+        null,
         _react2.default.createElement(
-          'section',
-          { className: 'contactUs' },
+          'div',
+          { className: 'con' },
           _react2.default.createElement(
-            'ul',
-            { className: 'footer-list-top' },
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'h4',
-                { className: 'footer-list-header' },
-                'Oppening Hours'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor' },
-                'Monday - Friday'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor2' },
-                '9:00 am - 6:00 pm'
-              )
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor' },
-                'Saturday'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor2' },
-                '9:00 am - 4:00 pm'
-              )
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor' },
-                'Sunday'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor2' },
-                '9:00 am - 2:00 pm'
-              )
-            ),
-            _react2.default.createElement('hr', null)
-          ),
+            'div',
+            { className: 'baseCon' },
+            _react2.default.createElement('i', { className: 'fa fa-mobile' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'contactUs', className: 'contactUs' },
           _react2.default.createElement(
-            'ul',
-            { className: 'footer-list-top vl' },
+            'section',
+            { className: 'contactUs' },
             _react2.default.createElement(
-              'li',
-              null,
+              'ul',
+              { className: 'contact-list-top' },
               _react2.default.createElement(
-                'h4',
-                { className: 'footer-list-header' },
-                'Contact Us'
-              )
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h4',
+                  { className: 'contact-list-header' },
+                  'Oppening Hours'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor' },
+                  'Monday - Friday'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor2' },
+                  '9:00 am - 6:00 pm'
+                )
+              ),
+              _react2.default.createElement('hr', null),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor' },
+                  'Saturday'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor2' },
+                  '9:00 am - 4:00 pm'
+                )
+              ),
+              _react2.default.createElement('hr', null),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor' },
+                  'Sunday'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor2' },
+                  '9:00 am - 2:00 pm'
+                )
+              ),
+              _react2.default.createElement('hr', null)
             ),
             _react2.default.createElement(
-              'li',
-              null,
+              'ul',
+              { className: 'contact-list-top vl' },
               _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor' },
-                'Gaza'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h4',
+                  { className: 'contact-list-header' },
+                  'Contact Us'
+                )
+              ),
               _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor2' },
-                '+972591234567'
-              )
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor' },
+                  'Gaza'
+                )
+              ),
               _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor' },
-                'Hebron'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor2' },
+                  '+972591234567'
+                )
+              ),
+              _react2.default.createElement('hr', null),
               _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor2' },
-                '+972591234567'
-              )
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor' },
+                  'Hebron'
+                )
+              ),
               _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor' },
-                'Juresalem'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor2' },
+                  '+972591234567'
+                )
+              ),
+              _react2.default.createElement('hr', null),
               _react2.default.createElement(
-                'a',
-                { className: 'footer-list-anchor2' },
-                '+972591234567'
-              )
-            ),
-            _react2.default.createElement('hr', null)
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor' },
+                  'Juresalem'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { className: 'contact-list-anchor2' },
+                  '+972591234567'
+                )
+              ),
+              _react2.default.createElement('hr', null)
+            )
           )
         )
       );
@@ -25886,7 +25904,129 @@ exports = module.exports = __webpack_require__(6)(undefined);
 
 
 // module
-exports.push([module.i, ".con {\n  position: relative;\n  bottom: 124px;\n}\n.baseCon {\n  background: #66d49d;\n  opacity: 0.3;\n  filter: alpha(opacity=30);\n  display: inline-block;\n  height: 55px;\n  text-align: center;\n  color: #eb5757;\n  font-size: 53px;\n  margin-top: -42px;\n  position: relative;\n  width: 100px;\n}\n.baseCon:before {\n  border-bottom: 35px solid #66d49d;\n  border-left: 50px solid transparent;\n  border-right: 50px solid transparent;\n  content: '';\n  height: 0;\n  left: 0;\n  position: absolute;\n  top: -35px;\n  width: 0;\n}\n\n.fa {\n  bottom: 12px;\n  position: relative;\n}\nul {\n  list-style: none;\n}\n\na {\n  text-decoration: none;\n}\n\n.contactUs {\n  display: flex;\n  flex-flow: row wrap;\n\n  padding-top: 2px;\n}\n\nsection {\n  background: #66D49D;\n\n  margin-top: auto;\n  width: 100%;\n}\n\n.footer-list-top {\n  width: 45%;\n}\n\n.footer-list-top > li {\n  text-align: center;\n  padding-bottom: 10px;\n}\n\n.footer-list-header {\n  padding: 10px 0 5px 0;\n  color: #fff;\n\n  font-weight: bold;\n  font: 2.3vw \"Oswald\", sans-serif;\n}\n\nhr {\n  color: #800000;\n  size: 1px;\n  width: 35%;\n}\n.vl{\n  border-left: 1px solid gray;\n}\n\n.footer-list-anchor {\n  font: 24px \"Roboto\";\n  font-weight: bold;\n  color: white;\n}\n\n.footer-list-anchor2 {\n  font: 18px \"Roboto\";\n  color: #fff;\n  font-weight: lighter;\n}\n\n@media only screen and (max-width: 768px) {\n  .footer-list-header {\n    font-size: 2em;\n  }\n  .footer-list-anchor {\n    font-size: 1.1em;\n  }\n}\n\n@media only screen and (max-width: 568px) {\n  main {\n    font-size: 5em;\n  }\n  .footer-list-top {\n    width: 100%;\n  }\n  .footer-list-header {\n    font-size: 3em;\n  }\n  .footer-list-anchor {\n    font-size: 1.5em;\n  }\n}\n\n@media only screen and (max-width: 320px) {\n  .footer-list-header {\n    font-size: 2.2em;\n  }\n  .footer-list-anchor {\n    font-size: 1.2em;\n  }\n}\n", ""]);
+exports.push([module.i, ".con {\n  display: flex;\n  justify-content: center;\n  bottom: -10px;\n}\n\n.baseCon {\n  background: #66d49d;\n  opacity: 0.3;\n  filter: alpha(opacity=50);\n  display: inline-block;\n  height: 55px;\n  text-align: center;\n  color: #eb5757;\n  font-size: 53px;\n  margin-top: -42px;\n  position: relative;\n  width: 100px;\n}\n\n.baseCon:before {\n  border-bottom: 35px solid #66d49d;\n  border-left: 50px solid transparent;\n  border-right: 50px solid transparent;\n  content: '';\n  height: 0;\n  left: 0;\n  position: absolute;\n  top: -35px;\n  width: 0;\n}\n\n.fa {\n  bottom: 12px;\n  position: relative;\n}\nul {\n  list-style: none;\n}\n\na {\n  text-decoration: none;\n}\n\n.contactUs {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n  padding-top: 2px;\n}\n\nsection {\n  background: #66D49D;\n\n  margin-top: auto;\n  width: 100%;\n}\n\n.contact-list-top {\n  width: 45%;\n}\n\n.contact-list-top > li {\n  text-align: center;\n  padding-bottom: 10px;\n}\n\n.contact-list-header {\n  padding: 10px 0 5px 0;\n  color: #fff;\n  font-weight: bold;\n  font: 2.3vw \"Oswald\", sans-serif;\n}\n\nhr {\n  color: #800000;\n  size: 1px;\n  width: 35%;\n}\n.vl{\n  border-left: 1px solid gray;\n}\n\n.contact-list-anchor {\n  font: 24px \"Roboto\";\n  font-weight: bold;\n  color: white;\n}\n\n.contact-list-anchor2 {\n  font: 18px \"Roboto\";\n  color: #fff;\n  font-weight: lighter;\n}\n\n@media only screen and (max-width: 768px) {\n  .contact-list-header {\n    font-size: 2em;\n  }\n  .contact-list-anchor {\n    font-size: 1.1em;\n  }\n}\n\n@media only screen and (max-width: 568px) {\n  main {\n    font-size: 5em;\n  }\n  .contact-list-top {\n    width: 100%;\n  }\n  .contact-list-header {\n    font-size: 3em;\n  }\n  .contact-list-anchor {\n    font-size: 1.5em;\n  }\n}\n\n@media only screen and (max-width: 320px) {\n  .contact-list-header {\n    font-size: 2.2em;\n  }\n  .contact-list-anchor {\n    font-size: 1.2em;\n  }\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(108);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Footer = function (_Component) {
+  _inherits(Footer, _Component);
+
+  function Footer() {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+  }
+
+  _createClass(Footer, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('div', { className: 'push' }),
+        _react2.default.createElement(
+          'footer',
+          { id: 'footer' },
+          _react2.default.createElement(
+            'div',
+            { className: 'footer-center' },
+            _react2.default.createElement(
+              'div',
+              { className: 'footer-copy' },
+              _react2.default.createElement(
+                'p',
+                null,
+                '2018 Gene Med Labs .com \xA9 All Rights Reserved. Designed by ',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'wmy' },
+                  'WMY'
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Footer;
+}(_react.Component);
+
+exports.default = Footer;
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(109);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(7)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js!./FooterStyle.css", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js!./FooterStyle.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(6)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "#footer, .push {\nclear: both;\nborder-top: 2px solid gray;\nbackground-color: #66D49D;\n}\n\n.footer-center {\n\twidth: 100%;\n\tmargin: 0 auto;\n\theight:4em;\n  padding-bottom: 2px;\n}\n\n.footer-copy {\n  font-family: Roboto;\n  font-style: normal;\n  font-weight: bold;\n  line-height: normal;\n  font-size: 24px;\n  text-align: center;\n  color: #55635C;\n\t}\n\n.wmy {\n  color: #EB5757;\n}\n/* 2018 Gene Med Labs .com © All Rights Reserved. Designed by WMY */\n", ""]);
 
 // exports
 
