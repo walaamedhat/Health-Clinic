@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import './doctor.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Doctor extends Component {
   render() {
+    const routeDoctor = `/calender/${this.props.name}`;
+
     return (
       <div className = 'doctor'>
         <div className='class-h2'>
@@ -15,7 +18,9 @@ class Doctor extends Component {
           <p>{this.props.description}</p>
         </div>
         <div className='img'>
-          <img src='/assets/calender.png' />
+          <Link to={routeDoctor}>
+            <img src='/assets/calender.png' />
+          </Link>
         </div>
       </div>
     );
@@ -28,7 +33,6 @@ Doctor.propTypes = {
   position: PropTypes.string,
   location: PropTypes.string,
   description: PropTypes.string
-
 };
 
 export default Doctor;

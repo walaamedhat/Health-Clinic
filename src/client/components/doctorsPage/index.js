@@ -41,7 +41,7 @@ class DoctorsPage extends Component {
         <div className='container-doctors'>
           {
             data.map((doctor,i) => (
-              <Doctor key={i} name={doctor.name} description={doctor.description} position={doctor.position} />
+              <Doctor key={i} id={doctor.id} name={doctor.name} description={doctor.description} position={doctor.position}/>
             ))
           }
 
