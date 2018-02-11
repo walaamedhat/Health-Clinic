@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/home';
 import DoctorsPage from './components/doctorsPage';
+import DoctorView from './components/doctorsView/';
 import store from './store';
 
 ReactDOM.render(
@@ -13,6 +14,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/doctors/:cityName' component={DoctorsPage} />
+          <Route exact path='/doctors/:id_doctor' component={DoctorView} />
           {/* <Route exact path='/login' component={Login} /> */}
           {/* <Route path='/' component={PageNotFound} /> */}
         </Switch>

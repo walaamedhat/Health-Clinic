@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import GreenNav from '../greenNav/GreenNav';
 import Header from '../header/Header';
-import * as dataDoctorAction from '../../actions/dataDoctor';
-import Doctor from './doctor/Doctor';
+import * as doctorViewAction from '../../actions/doctorView';
+import DoctorViewPage from './doctorView/DoctorView';
 
 import { BarLoader } from 'react-spinners';
 
-class DoctorsPage extends Component {
+class DoctorView extends Component {
   componentDidMount() {
-    const { fetchDoctors } = this.props;
-    fetchDoctors(this.props.match.params.cityName);
+    const { fetchDoctorView } = this.props;
+    fetchDoctorView(this.props.match.params.id_doctor);
     console.log(this.props);
   }
   render() {
-    const { isFetching , error , data } = this.props;
+    const { isFetching , error , appointments } = this.props;
 
     return (
       <div>
@@ -42,8 +42,8 @@ class DoctorsPage extends Component {
 
         <div className='container-doctors'>
           {
-            data.map((doctor,i) => (
-              <Doctor key={i} name={doctor.name} description={doctor.description}
+            appointments.map((doctor,i) => (
+              <DoctorViewPage key={i} name={doctor.name} description={doctor.description}
                 position={doctor.position} />
             ))
           }
@@ -54,9 +54,9 @@ class DoctorsPage extends Component {
   }
 }
 
-DoctorsPage.propTypes = {
-  fetchDoctors: PropTypes.func,
-  data: PropTypes.array,
+DoctorView.propTypes = {
+  fetchDoctorView: PropTypes.func,
+  appointments: PropTypes.array,
   error: PropTypes.string,
   isFetching: PropTypes.bool,
   match: PropTypes.object,
@@ -65,10 +65,10 @@ DoctorsPage.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    data: state.doctors.data,
+    appointments: state.doctors.appointments,
     error: state.doctors.error,
     isFetching: state.doctors.isFetching
   };
 };
 
-export default connect(mapStateToProps, dataDoctorAction)(DoctorsPage);
+export default connect(mapStateToProps, doctorViewAction)(DoctorView);
