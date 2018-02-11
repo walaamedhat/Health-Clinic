@@ -1,47 +1,87 @@
-.doctor{
+.doctor {
   margin-bottom: 20px;
 }
-
-.name{
+.name {
   margin: 10px 0 0 0;
-  background-color:#4C8A6B;
+  background-color: #4c8a6b;
   width: 60%;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: white;
 }
-.doctor>img{
-    align-self: center;
-    justify-content: center;
+.doctor > img {
+  align-self: center;
+  justify-content: center;
 }
-.container-doctors{
+.container-doctors {
   width: 85%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
 }
-.inner-doctor{
-  background-color: #C4C4C4;
+.inner-doctor {
+  background-color: #c4c4c4;
   border-left: 5px solid #66d49d;
 }
 
-h5{
+h5 {
   margin: 0;
-  color: #55635C;
+  color: #55635c;
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
-  padding-left: 10px
-}
-h6{
-  margin: 0;
-  padding-left: 10px
-}
-.inner-doctor>p{
   padding-left: 10px;
-  position:relative;
 }
-.img{
+h6 {
+  margin: 0;
+  padding-left: 10px;
+}
+.inner-doctor > p {
+  padding-left: 10px;
+  position: relative;
+}
+.img {
   display: flex;
   justify-content: center;
+}
+.www {
+  width: 100%;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.text {
+  display: flex;
+  justify-content: center;
+}
+.calender {
+  display: flex;
+  justify-content: center;
+}
+.input {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+input[type='text'] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type='text']:focus {
+  border: 3px solid #555;
+}
+button {
+  font-size: 27px;
+  width: 23%;
+  margin-top: 8px;
+  height: 45px;
+  background-color: #56ccf2;
+  border: none;
+  color: white;
 }

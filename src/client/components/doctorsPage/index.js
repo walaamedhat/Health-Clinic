@@ -10,41 +10,32 @@ class DoctorsPage extends Component {
   componentDidMount() {
     const { fetchDoctors } = this.props;
     fetchDoctors(this.props.match.params.cityName);
-    console.log(this.props);
   }
   render() {
-    const { isFetching , error , data } = this.props;
+    const { isFetching, error, data } = this.props;
+    console.log(this.props);
 
     return (
       <div>
         <GreenNav />
         <Navbar />
-        {
-          isFetching && (
-            <center className='center'>
-              <BarLoader
-                color={'#66D49D'}
-                loading={isFetching}
-                width={200}
-              />
-            </center>
-          )
-        }
-        {
-          error && (
-            <div className='data-error'>
-              { error }
-            </div>
-          )
-        }
+        {isFetching && (
+          <center className='center'>
+            <BarLoader color={'#66D49D'} loading={isFetching} width={200} />
+          </center>
+        )}
+        {error && <div className='data-error'>{error}</div>}
 
         <div className='container-doctors'>
-          {
-            data.map((doctor,i) => (
-              <Doctor key={i} name={doctor.name} description={doctor.description} position={doctor.position} />
-            ))
-          }
-
+          {data.map((doctor, i) => (
+            <Doctor
+              key={i}
+              id={doctor.id}
+              name={doctor.name}
+              description={doctor.description}
+              position={doctor.position}
+            />
+          ))}
         </div>
       </div>
     );
