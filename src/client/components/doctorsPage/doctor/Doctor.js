@@ -1,12 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './doctor.css';
+import { reserveData } from '../../../actions/reserveDataPatient';
 import PropTypes from 'prop-types';
 import SkyLight from 'react-skylight';
-import Basic from '../../calender/index.js';
+import Basic from '../../calender';
 
 class Doctor extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+      id: e.target.id
+    });
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    this.props.reserveData(this.state);
+    event.preventDefault();
   }
 
   render() {
@@ -32,6 +54,8 @@ class Doctor extends Component {
         </div>
         <div className='img'>
           <img
+            name={this.props.name}
+            id={this.props.id}
             src='/assets/calender.png'
             onClick={() => this.simpleDialog.show()}
           />
@@ -46,26 +70,28 @@ class Doctor extends Component {
             <div className='calender' style={sytleCalender}>
               <Basic />
             </div>
-            <div className='input'>
-              <input
-                type='text'
-                name='name'
-                value=''
-                id='name'
-                className='patientname'
-                placeholder='Name'
-              />
-              <input
-                type='text'
-                name='phone'
-                value=''
-                id='phone'
-                className='phone'
-                placeholder='Phone'
-              />
-              <button type='button' name='button'>
-                Book
-              </button>
+            <div>
+              <form className='input' onSubmit={this.handleSubmit}>
+                <input
+                  id={this.props.id}
+                  type='text'
+                  name='name'
+                  value={this.state.value}
+                  onChange={this.handleInputChange}
+                  className='patientname'
+                  placeholder='Name'
+                />
+                <input
+                  id={this.props.id}
+                  type='text'
+                  name='phone'
+                  value={this.state.value}
+                  onChange={this.handleInputChange}
+                  className='phone'
+                  placeholder='Phone'
+                />
+                <input type='submit' value='Book' />
+              </form>
             </div>
           </div>
         </SkyLight>
@@ -75,10 +101,15 @@ class Doctor extends Component {
 }
 
 Doctor.propTypes = {
+  id: PropTypes.number,
   name: PropTypes.string,
   position: PropTypes.string,
   location: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  reserveData: PropTypes.func
 };
 
-export default Doctor;
+const mapDispatchToProps = {
+  reserveData
+};
+export default connect(null, mapDispatchToProps)(Doctor);

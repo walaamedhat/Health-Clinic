@@ -71,16 +71,17 @@ input[type='text'] {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
+  color: black;
 }
 
 input[type='text']:focus {
   border: 3px solid #555;
 }
-button {
+input[type='submit'] {
+  padding: 12px 20px;
   font-size: 27px;
-  width: 23%;
-  margin-top: 8px;
-  height: 45px;
+  width: 30%;
+  margin: 8px 0;
   background-color: #56ccf2;
   border: none;
   color: white;
