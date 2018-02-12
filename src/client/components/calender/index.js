@@ -21,8 +21,6 @@ class Basic extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <div style={{ width: '100%' }}>
         <BigCalendar

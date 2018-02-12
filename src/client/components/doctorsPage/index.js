@@ -13,7 +13,6 @@ class DoctorsPage extends Component {
   }
   render() {
     const { isFetching, error, data } = this.props;
-    console.log(this.props);
 
     return (
       <div>

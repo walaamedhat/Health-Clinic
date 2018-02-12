@@ -1,7 +1,6 @@
 const dbConnection = require('../database/dbConnection');
 
 const addpatient = (data, cb) => {
-  console.log('pppppppppp');
   const sql =
     ' INSERT INTO patients (name, phone, dob, note, visit, time,"interval")VALUES (\'salam\', \'0595142567\', \'2018-02-08\', \'n thing much to sy\', \'12\', \'09:20:00\',\'8\') RETURNING *';
   dbConnection.query(sql, (dataBaseConnectionErorr, data) => {

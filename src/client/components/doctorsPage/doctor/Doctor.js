@@ -66,7 +66,7 @@ class Doctor extends Component {
           ref={ref => (this.simpleDialog = ref)}
           title='Calender of the doctor'
         >
-          <div className='www'>
+          <div className='popup'>
             <div className='calender' style={sytleCalender}>
               <Basic />
             </div>
