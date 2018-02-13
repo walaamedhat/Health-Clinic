@@ -3,7 +3,7 @@ const dbConnection = require('../database/dbConnection');
 const viewDoctorsGaza = (cityName, cb) => {
   const sql = {
     text:
-      'SELECT name,location,position,description,image FROM doctors WHERE location = $1',
+      'SELECT id,name,location,position,description,image FROM doctors WHERE location = $1',
     values: [cityName]
   };
   dbConnection.query(sql, (dataBaseConnectionErorr, doctors) => {
