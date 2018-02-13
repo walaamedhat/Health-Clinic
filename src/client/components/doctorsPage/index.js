@@ -2,49 +2,41 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import GreenNav from '../greenNav/GreenNav';
-import Navbar from '../navbar/Navbar';
+import Header from '../header/Header';
 import * as dataDoctorAction from '../../actions/dataDoctor';
 import Doctor from './doctor/Doctor';
+
 import { BarLoader } from 'react-spinners';
+
 class DoctorsPage extends Component {
   componentDidMount() {
     const { fetchDoctors } = this.props;
     fetchDoctors(this.props.match.params.cityName);
-    console.log(this.props);
   }
   render() {
-    const { isFetching , error , data } = this.props;
+    const { isFetching, error, data } = this.props;
 
     return (
       <div>
         <GreenNav />
-        <Navbar />
-        {
-          isFetching && (
-            <center className='center'>
-              <BarLoader
-                color={'#66D49D'}
-                loading={isFetching}
-                width={200}
-              />
-            </center>
-          )
-        }
-        {
-          error && (
-            <div className='data-error'>
-              { error }
-            </div>
-          )
-        }
+        <Header />
+        {isFetching && (
+          <center className='center'>
+            <BarLoader color={'#66D49D'} loading={isFetching} width={200} />
+          </center>
+        )}
+        {error && <div className='data-error'>{error}</div>}
 
-        <div className='container-doctors'>
-          {
-            data.map((doctor,i) => (
-              <Doctor key={i} id={doctor.id} name={doctor.name} description={doctor.description} position={doctor.position}/>
-            ))
-          }
-
+        <div className='container-doctor'>
+          {data.map((doctor, i) => (
+            <Doctor
+              key={i}
+              id={doctor.id}
+              name={doctor.name}
+              description={doctor.description}
+              position={doctor.position}
+            />
+          ))}
         </div>
       </div>
     );

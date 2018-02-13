@@ -11,7 +11,7 @@ const images = [
 class Slider extends Component {
   render() {
     return (
-      <div>
+      <div className='sliderbar'>
         <Slide
           images={images}
           duration='5000'
