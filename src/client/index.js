@@ -16,7 +16,6 @@ ReactDOM.render(
           <Route exact path='/doctors/:cityName' component={DoctorsPage} />
           <Route exact path='/calender' component={MyCalendar} />
           <Route exact path='/secertary' component={SecertaryPage} />
-
           {/* <Route exact path='/login' component={Login} /> */}
           {/* <Route path='/' component={PageNotFound} /> */}
         </Switch>
