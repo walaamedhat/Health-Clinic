@@ -13,6 +13,9 @@ app.use((err, req, res, next) => {
 });
 
 app.use('/api/v1/', routes);
+app.use('/api/v1/', (req, res) => {
+  res.status(404).json({ message: 'page  not found' });
+});
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'));
 });
