@@ -9,7 +9,8 @@
     "dev:build": "webpack",
     "dev:start": "nodemon --exec babel-node ./src/server/",
     "test": "NODE_ENV=testing node ./test.js | tap-spec",
-    "lint": "eslint src --fix"
+    "lint": "eslint src --fix",
+    "heroku-postbuild": "webpack -p --config webpack.config.js --progress"
   },
   "keywords": [],
   "author": "",
