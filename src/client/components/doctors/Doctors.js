@@ -18,14 +18,14 @@ class Doctors extends Component {
             <img src='./assets/hebron.png' className='dr_location' />
             <span className='hebron'> Hebron </span>
           </Link>
-          <a href='/doctors/gaza'>
+          <Link to='/doctors/gaza'>
             <img src='./assets/gaza.png' className='dr_location' />
             <span className='gaza'> Gaza </span>
-          </a>
-          <a href='/doctors/jerusalem'>
+          </Link>
+          <Link to='/doctors/jerusalem'>
             <img src='./assets/jerusalem.png' className='dr_location' />
             <span className='jerusalem'> Jerusalem </span>
-          </a>
+          </Link>
         </div>
       </div>
     );

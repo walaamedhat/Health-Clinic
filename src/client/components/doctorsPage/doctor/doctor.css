@@ -13,7 +13,7 @@
   align-self: center;
   justify-content: center;
 }
-.container-doctors {
+.container-doctor {
   width: 85%;
   display: flex;
   justify-content: space-between;
@@ -49,10 +49,7 @@ h6 {
   flex-direction: column;
   margin: 0 auto;
 }
-.text {
-  display: flex;
-  justify-content: center;
-}
+
 .calender {
   display: flex;
   justify-content: center;
