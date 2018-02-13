@@ -17,6 +17,7 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .navbar>ul{
@@ -27,6 +28,7 @@ h1{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 0;
 }
 
 .firstUl li a{
