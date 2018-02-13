@@ -27,7 +27,7 @@ class DoctorsPage extends Component {
         )}
         {error && <div className='data-error'>{error}</div>}
 
-        <div className='container-doctors'>
+        <div className='container-doctor'>
           {data.map((doctor, i) => (
             <Doctor
               key={i}

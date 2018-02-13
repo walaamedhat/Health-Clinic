@@ -42,7 +42,7 @@ a {
 .contactUs {
   display: flex;
   flex-flow: row wrap;
-
+  justify-content: center;
   padding-top: 2px;
 }
 
@@ -55,6 +55,8 @@ section {
 
 .footer-list-top {
   width: 45%;
+  padding-left: 0px;
+
 }
 
 .footer-list-top > li {
