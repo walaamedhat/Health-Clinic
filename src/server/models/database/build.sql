@@ -34,10 +34,10 @@ CREATE TABLE "patients" (
  	"name" varchar(100) NOT NULL,
  	"phone" varchar(50) NOT NULL,
  	"dop" DATE DEFAULT NULL,
- 	"note" TEXT DEFAULT NULL,
- 	"visit" integer DEFAULT NULL,
- 	"time" TIME DEFAULT NULL,
- 	"interval" integer DEFAULT NULL
+ 	"note" TEXT DEFAULT '',
+ 	"visit" integer DEFAULT 0,
+ 	"time" TIME DEFAULT '00:00:00',
+ 	"interval" integer DEFAULT 0
  );
 
 

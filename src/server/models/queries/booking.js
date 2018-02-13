@@ -2,17 +2,10 @@ const dbConnection = require('../database/dbConnection');
 // , dob, note, visit, time,"interval"
 const addpatient = (data, cb) => {
   const sql = {
-    text:
-      'INSERT INTO patients (name, phone,dob, note, visit, time,"interval")' +
-      'values($1,$2,$3,$4,$5,$6,$7)RETURNING *',
+    text: 'INSERT INTO patients (name, phone)' + 'values($1,$2)RETURNING *',
     values: [
       `${data.reserveData.dataPatient.name}`,
-      `${data.reserveData.dataPatient.phone}`,
-      null,
-      null,
-      null,
-      null,
-      null
+      `${data.reserveData.dataPatient.phone}`
     ]
   };
 
@@ -40,12 +33,7 @@ const booking = (data, cb) => {
           'out'
         ]
       };
-      dbConnection.query(sql, (erorr2, Message) => {
-        if (erorr2) return cb(erorr2);
-        Message = 'Booking Success';
-
-        return cb(null, Message);
-      });
+      dbConnection.query(sql, cb);
     }
   });
 };
