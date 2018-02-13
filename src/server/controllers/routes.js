@@ -6,6 +6,6 @@ const reserve = require('./reserve');
 
 router.get('/doctors/:cityName', doctors.get);
 
-router.get('/reserve', reserve.get);
+router.post('/reserve', reserve.post);
 
 module.exports = router;

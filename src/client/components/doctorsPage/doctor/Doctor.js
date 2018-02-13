@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './doctor.css';
-import { reserveData } from '../../../actions/reserveDataPatient';
+import * as dataPatient from '../../../actions/reserveDataPatient';
 import PropTypes from 'prop-types';
 import SkyLight from 'react-skylight';
 import Basic from '../../calender';
@@ -28,6 +28,7 @@ class Doctor extends Component {
 
   handleSubmit(event) {
     this.props.reserveData(this.state);
+    this.props.reserveAppointment();
     event.preventDefault();
   }
 
@@ -106,10 +107,9 @@ Doctor.propTypes = {
   position: PropTypes.string,
   location: PropTypes.string,
   description: PropTypes.string,
-  reserveData: PropTypes.func
+  reserveData: PropTypes.func,
+  reserveAppointment: PropTypes.func,
+  time: PropTypes.string
 };
 
-const mapDispatchToProps = {
-  reserveData
-};
-export default connect(null, mapDispatchToProps)(Doctor);
+export default connect(null, dataPatient)(Doctor);

@@ -33,11 +33,11 @@ CREATE TABLE "patients" (
  	"id" serial PRIMARY KEY,
  	"name" varchar(100) NOT NULL,
  	"phone" varchar(50) NOT NULL,
- 	"DOB" DATE NOT NULL,
- 	"note" TEXT NOT NULL,
- 	"visit" integer NOT NULL,
- 	"time" TIME NOT NULL,
- 	"interval" integer NOT NULL
+ 	"dop" DATE DEFAULT NULL,
+ 	"note" TEXT DEFAULT NULL,
+ 	"visit" integer DEFAULT NULL,
+ 	"time" TIME DEFAULT NULL,
+ 	"interval" integer DEFAULT NULL
  );
 
 
