@@ -1,11 +1,13 @@
 .con {
-  position: relative;
-  bottom: 124px;
+  display: flex;
+  justify-content: center;
+  bottom: -10px;
 }
+
 .baseCon {
   background: #66d49d;
   opacity: 0.3;
-  filter: alpha(opacity=30);
+  filter: alpha(opacity=50);
   display: inline-block;
   height: 55px;
   text-align: center;
@@ -15,6 +17,7 @@
   position: relative;
   width: 100px;
 }
+
 .baseCon:before {
   border-bottom: 35px solid #66d49d;
   border-left: 50px solid transparent;
@@ -42,7 +45,7 @@ a {
 .contactUs {
   display: flex;
   flex-flow: row wrap;
-
+  justify-content: center;
   padding-top: 2px;
 }
 
@@ -53,19 +56,20 @@ section {
   width: 100%;
 }
 
-.footer-list-top {
+.contact-list-top {
   width: 45%;
+  padding-left: 0px;
+
 }
 
-.footer-list-top > li {
+.contact-list-top > li {
   text-align: center;
   padding-bottom: 10px;
 }
 
-.footer-list-header {
+.contact-list-header {
   padding: 10px 0 5px 0;
   color: #fff;
-
   font-weight: bold;
   font: 2.3vw "Oswald", sans-serif;
 }
@@ -79,23 +83,23 @@ hr {
   border-left: 1px solid gray;
 }
 
-.footer-list-anchor {
+.contact-list-anchor {
   font: 24px "Roboto";
   font-weight: bold;
   color: white;
 }
 
-.footer-list-anchor2 {
+.contact-list-anchor2 {
   font: 18px "Roboto";
   color: #fff;
   font-weight: lighter;
 }
 
 @media only screen and (max-width: 768px) {
-  .footer-list-header {
+  .contact-list-header {
     font-size: 2em;
   }
-  .footer-list-anchor {
+  .contact-list-anchor {
     font-size: 1.1em;
   }
 }
@@ -104,22 +108,22 @@ hr {
   main {
     font-size: 5em;
   }
-  .footer-list-top {
+  .contact-list-top {
     width: 100%;
   }
-  .footer-list-header {
+  .contact-list-header {
     font-size: 3em;
   }
-  .footer-list-anchor {
+  .contact-list-anchor {
     font-size: 1.5em;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .footer-list-header {
+  .contact-list-header {
     font-size: 2.2em;
   }
-  .footer-list-anchor {
+  .contact-list-anchor {
     font-size: 1.2em;
   }
 }

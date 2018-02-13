@@ -12,7 +12,14 @@ app.use((err, req, res, next) => {
   next();
 });
 
+<<<<<<< HEAD
 app.use('/api/v1', routes);
+=======
+app.use('/api/v1/', routes);
+app.use('/api/v1/', (req, res) => {
+  res.status(404).json({ message: 'page  not found' });
+});
+>>>>>>> aa51193ccf520b5a2516187c077651e4a246b9ed
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'));
 });
