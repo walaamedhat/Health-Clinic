@@ -5,35 +5,31 @@ import {
 } from '../constants/actionTypes.js';
 
 export const appointmentsFetchStart = () => {
-  console.log('start');
 
   return {
     type: APPOINTMENTS_FETCH_START
   };
 };
 
-export const appointmentsFetchSuccess = payload => {
-  console.log('success');
+export const appointmentsFetchSuccess = appointments => {
 
   return {
     type: APPOINTMENTS_FETCH_SUCCESS,
-    payload
+    payload: appointments
   };
 };
 
 export const appointmentsFetchFailure = massage => {
-  console.log('fail');
 
   return {
     type: APPOINTMENTS_FETCH_FAILURE,
-    payload: massage
+    error: massage
   };
 };
 
 export const fetchDoctorView = id_doctor => dispatch => {
-  console.log('jkadbvs');
   dispatch(appointmentsFetchStart());
-  fetch(`/api/v1/doctors/${id_doctor}`)
+  fetch(`/api/v1/doctor/${id_doctor}`)
     .then(res => {
       if (res.status >= 400) {
         throw new Error('Bad response from sarver');
