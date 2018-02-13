@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import GreenNav from '../greenNav/GreenNav';
-import Navbar from '../navbar/Navbar';
+import Header from '../header/Header';
 import * as dataDoctorAction from '../../actions/dataDoctor';
 import Doctor from './doctor/Doctor';
+
 import { BarLoader } from 'react-spinners';
+
 class DoctorsPage extends Component {
   componentDidMount() {
     const { fetchDoctors } = this.props;
@@ -17,7 +19,7 @@ class DoctorsPage extends Component {
     return (
       <div>
         <GreenNav />
-        <Navbar />
+        <Header />
         {isFetching && (
           <center className='center'>
             <BarLoader color={'#66D49D'} loading={isFetching} width={200} />
