@@ -1,8 +1,8 @@
 const dbConnection = require('../database/dbConnection');
-// , dob, note, visit, time,"interval"
+
 const addpatient = (data, cb) => {
   const sql = {
-    text: 'INSERT INTO patients (name, phone)' + 'values($1,$2)RETURNING *',
+    text: 'INSERT INTO patients (name, phone)' + 'values($1,$2)RETURNING id',
     values: [
       `${data.reserveData.dataPatient.name}`,
       `${data.reserveData.dataPatient.phone}`

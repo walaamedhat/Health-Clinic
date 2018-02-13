@@ -1,5 +1,5 @@
 const supertest = require('supertest');
-const app = require('./server/index.js');
+const app = require('./src/server/index.js');
 const test = require('tape');
 
 const getHomePage = () => {

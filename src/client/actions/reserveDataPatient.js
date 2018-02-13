@@ -5,9 +5,7 @@ import {
 
 const reserve = payload => ({ type: RESERVE_DATA_PATIENT, payload });
 
-export const reserveData = data => dispatch => {
-  dispatch(reserve(data));
-};
+export const reserveData = data => dispatch => dispatch(reserve(data));
 export const dataFetchFailure = massage => {
   return {
     type: DATA_FETCH_FAILURE,
@@ -22,7 +20,6 @@ export const reserveAppointment = () => (dispatch, getState) => {
     reserve: getState().reserve,
     reserveData: getState().reserveData
   };
-  console.log('data : ', data);
   fetch('/api/v1/reserve', {
     method: 'POST',
     headers: {
