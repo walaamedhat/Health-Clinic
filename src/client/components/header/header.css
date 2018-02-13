@@ -13,35 +13,20 @@ h1{
 .logo{
   display: flex;
 }
-.navbar{
+.header{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0;
 }
 
-.navbar>ul{
+.header>ul{
     display:  flex;
     list-style:  none;
 }
-.firstUl{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 0;
+.secondUl {
+    display:  flex;
+    list-style:  none;
 }
-
-.firstUl li a{
-  color: #66D49D;
-  font-size: 18px;
-  margin-right: 15px;
-  font-weight: bold;
-  text-decoration: none;
-}
-.firstUl li a:hover{
-  color: #55635C;
-}
-
 .secondUl li a{
   color: #55635C;
   font-size: 18px;
@@ -68,6 +53,10 @@ h1{
 }
 .login:hover{
   background-color: #8b9dc3	;
+}
+.secondPart {
+  display: flex;
+  justify-content: space-between;
 }
 
 

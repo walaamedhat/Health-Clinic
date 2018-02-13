@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     return (
       <div id='aboutUs' className='aboutUs'>
-        <div className='container'>
+        <div className='container-about'>
           <div className='baseAbout'>
             <i className='fas fa-users' />{' '}
           </div>{' '}

@@ -4,7 +4,6 @@
 
 .button {
   text-decoration: none;
-  width: 11em;
   background: #66d49d;
   font-size: 24px;
   text-align: center;
@@ -13,7 +12,7 @@
   justify-content: center;
   position: absolute;
   top: 58%;
-  left: 78vh;
+  left: 39%;
   border-radius: 10px;
 }
 .button > a {
@@ -22,6 +21,11 @@
 }
 .button > a:hover {
   color: black;
+}
+.sliderbar > .container {
+  margin: 0 !important;
+  width: 100%;
+  padding: 0px;
 }
 
 @media only screen and (max-width: 1024px) {
