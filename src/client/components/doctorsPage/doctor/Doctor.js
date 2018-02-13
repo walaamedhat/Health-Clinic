@@ -5,7 +5,7 @@ import * as dataPatient from '../../../actions/reserveDataPatient';
 import PropTypes from 'prop-types';
 import SkyLight from 'react-skylight';
 import Basic from '../../calender';
-
+import validate from './validate';
 class Doctor extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +18,9 @@ class Doctor extends Component {
   handleInputChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
-      id: e.target.id
+      id: e.target.id,
+      nameError: '',
+      phoneError: ''
     });
   }
 
@@ -27,11 +29,20 @@ class Doctor extends Component {
   }
 
   handleSubmit(event) {
-    this.props.reserveData(this.state);
-    this.props.reserveAppointment();
     event.preventDefault();
+    const validateDate = validate(this.state.name , this.state.phone);
+    const err = validateDate.isError;
+    if (!err) {
+      this.props.reserveData(this.state);
+      this.props.reserveAppointment();
+    } else {
+      this.setState({
+        ...this.state,
+        ...validateDate.errors
+      });
+      console.log('state is here :',this.state);
+    }
   }
-
   render() {
     const myBigGreenDialog = {
       backgroundColor: '#00897B',
@@ -81,6 +92,8 @@ class Doctor extends Component {
                   onChange={this.handleInputChange}
                   className='patientname'
                   placeholder='Name'
+                  errorText = {this.state.nameError}
+                  required
                 />
                 <input
                   id={this.props.id}
@@ -90,9 +103,13 @@ class Doctor extends Component {
                   onChange={this.handleInputChange}
                   className='phone'
                   placeholder='Phone'
+                  errorText = {this.state.phoneError}
+                  required
                 />
                 <input type='submit' value='Book' />
               </form>
+              <div className='errorMassage'>{this.state.nameError}</div>
+              <div className='errorMassage'>{this.state.phoneError}</div>
             </div>
           </div>
         </SkyLight>
@@ -109,6 +126,7 @@ Doctor.propTypes = {
   description: PropTypes.string,
   reserveData: PropTypes.func,
   reserveAppointment: PropTypes.func,
+  onChange: PropTypes.func,
   time: PropTypes.string
 };
 
