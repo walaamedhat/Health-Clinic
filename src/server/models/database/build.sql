@@ -33,7 +33,7 @@ CREATE TABLE "patients" (
  	"id" serial PRIMARY KEY,
  	"name" varchar(100) NOT NULL,
  	"phone" varchar(50) NOT NULL,
- 	"dop" DATE DEFAULT NULL,
+ 	"dob" DATE DEFAULT NULL,
  	"note" TEXT DEFAULT '',
  	"visit" integer DEFAULT 0,
  	"time" TIME DEFAULT '00:00:00',

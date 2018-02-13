@@ -24,7 +24,8 @@ const booking = (data, cb) => {
     } else {
       const sql = {
         text:
-          'INSERT INTO appointments (id_patient,id_doctor,"date","time-set",status)values($1,$2,$3,$4,$5)',
+          'INSERT INTO appointments (id_patient,id_doctor,"date","time-set",status)' +
+          'values($1,$2,$3,$4,$5)',
         values: [
           `${message.id}`,
           `${data.reserveData.dataPatient.id}`,
