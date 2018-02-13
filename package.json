@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack && babel src --out-dir lib --copy-files",
-    "start": "node \"./lib/server\"",
+    "start": "node ./src/server/",
     "dev:build": "webpack",
     "dev:start": "nodemon --exec babel-node ./src/server/",
     "test": "NODE_ENV=testing node ./test.js | tap-spec",
