@@ -6,7 +6,6 @@ import store from './store';
 import Home from './components/home';
 import DoctorsPage from './components/doctorsPage';
 import DoctorViewPage from './components/doctorViewPage/';
-import store from './store';
 
 ReactDOM.render(
   <Provider store={store}>
