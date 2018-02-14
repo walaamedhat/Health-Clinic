@@ -5,7 +5,8 @@ import * as dataPatient from '../../../actions/reserveDataPatient';
 import PropTypes from 'prop-types';
 import SkyLight from 'react-skylight';
 import Basic from '../../calender';
-
+import Popup from '../../popup/Popup';
+import validate from './validate';
 class Doctor extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,10 @@ class Doctor extends Component {
   handleInputChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
-      id: e.target.id
+      id: e.target.id,
+      nameError: '',
+      phoneError: '',
+      booking: false
     });
   }
 
@@ -27,11 +31,21 @@ class Doctor extends Component {
   }
 
   handleSubmit(event) {
-    this.props.reserveData(this.state);
-    this.props.reserveAppointment();
     event.preventDefault();
+    const validateDate = validate(this.state.name, this.state.phone);
+    const err = validateDate.isError;
+    if (!err) {
+      this.setState({ booking: true });
+      this.props.reserveData(this.state);
+      this.props.reserveAppointment();
+    } else {
+      this.setState({
+        ...this.state,
+        ...validateDate.errors
+      });
+    }
+    console.log('state is here :', this.state);
   }
-
   render() {
     const myBigGreenDialog = {
       backgroundColor: '#00897B',
@@ -42,9 +56,11 @@ class Doctor extends Component {
     const sytleCalender = {
       height: '320px'
     };
+    const { booking } = this.state;
 
     return (
       <div className='doctor'>
+        {booking ? <Popup /> : <div />}
         <div className='class-h2'>
           <h2 className='name'>Dr.{this.props.name}</h2>
         </div>
@@ -81,6 +97,7 @@ class Doctor extends Component {
                   onChange={this.handleInputChange}
                   className='patientname'
                   placeholder='Name'
+                  required
                 />
                 <input
                   id={this.props.id}
@@ -90,9 +107,12 @@ class Doctor extends Component {
                   onChange={this.handleInputChange}
                   className='phone'
                   placeholder='Phone'
+                  required
                 />
                 <input type='submit' value='Book' />
               </form>
+              <div className='errorMassage'>{this.state.nameError}</div>
+              <div className='errorMassage'>{this.state.phoneError}</div>
             </div>
           </div>
         </SkyLight>
@@ -109,6 +129,7 @@ Doctor.propTypes = {
   description: PropTypes.string,
   reserveData: PropTypes.func,
   reserveAppointment: PropTypes.func,
+  onChange: PropTypes.func,
   time: PropTypes.string
 };
 

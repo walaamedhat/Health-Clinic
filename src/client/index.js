@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import store from './store';
 import Home from './components/home';
+// import Popup from './components/popup';
 import DoctorsPage from './components/doctorsPage';
 
 ReactDOM.render(
@@ -19,3 +20,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+// if (this.state.booking) {<Popup />}

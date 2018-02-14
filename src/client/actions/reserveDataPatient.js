@@ -14,7 +14,7 @@ export const dataFetchFailure = massage => {
 };
 export const reserveAppointment = () => (dispatch, getState) => {
   if (getState().reserve.time === '') {
-    return alert('Please Choose Your Appointment');
+    return (getState().reserveData.bookError = 'Please Choose Appointment');
   }
   const data = {
     reserve: getState().reserve,

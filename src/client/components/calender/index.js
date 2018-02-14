@@ -17,7 +17,6 @@ class Basic extends Component {
 
   handleTime(slotInfo) {
     this.props.reserve(slotInfo.start.toLocaleString());
-    alert(`You book appointment time :${slotInfo.start.toLocaleString()}`);
   }
 
   render() {
