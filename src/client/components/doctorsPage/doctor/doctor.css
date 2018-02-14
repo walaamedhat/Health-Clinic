@@ -103,3 +103,6 @@ input[type='submit']:hover{
     font-size: 18px;
     font-weight: bold;
 }
+.skylight-dialog{
+  top: 40% !important;
+}

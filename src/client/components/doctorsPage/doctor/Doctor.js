@@ -32,15 +32,14 @@ class Doctor extends Component {
     event.preventDefault();
     const validateDate = validate(this.state.name , this.state.phone);
     const err = validateDate.isError;
-    if (!err) {
-      this.props.reserveData(this.state);
-      this.props.reserveAppointment();
-    } else {
+    if (err) {
       this.setState({
         ...this.state,
         ...validateDate.errors
       });
-      console.log('state is here :',this.state);
+    } else {
+      this.props.reserveAppointment();
+      this.props.reserveData(this.state);
     }
   }
   render() {
@@ -92,7 +91,6 @@ class Doctor extends Component {
                   onChange={this.handleInputChange}
                   className='patientname'
                   placeholder='Name'
-                  errorText = {this.state.nameError}
                   required
                 />
                 <input
@@ -103,11 +101,11 @@ class Doctor extends Component {
                   onChange={this.handleInputChange}
                   className='phone'
                   placeholder='Phone'
-                  errorText = {this.state.phoneError}
                   required
                 />
                 <input type='submit' value='Book' />
               </form>
+              <div className='errorMassage'>{this.props.bookError}</div>
               <div className='errorMassage'>{this.state.nameError}</div>
               <div className='errorMassage'>{this.state.phoneError}</div>
             </div>
@@ -127,7 +125,16 @@ Doctor.propTypes = {
   reserveData: PropTypes.func,
   reserveAppointment: PropTypes.func,
   onChange: PropTypes.func,
-  time: PropTypes.string
+  time: PropTypes.string,
+  bookError: PropTypes.string
+
 };
 
-export default connect(null, dataPatient)(Doctor);
+const mapStateToProps = state => {
+  return { bookError: state.reserve.error };
+
+  console.log('state',state);
+
+};
+
+export default connect(mapStateToProps, dataPatient)(Doctor);

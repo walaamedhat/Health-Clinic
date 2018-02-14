@@ -1,5 +1,4 @@
 const validateNumberPhone = number => {
-  console.log('i am in the validateNumberPhone function ');
   const re = /^\+?\d{10}/;
 
   return re.test(number);
@@ -8,7 +7,6 @@ const validateNumberPhone = number => {
 const validate = (name,phone) => {
   let isError = false;
   const isErrorNumber = validateNumberPhone(phone);
-  console.log(isErrorNumber,'i am in validate');
   const errors = {};
   if (name.length < 5) {
     isError = true;
