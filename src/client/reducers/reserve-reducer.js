@@ -14,7 +14,6 @@ const data = (state = initialState, action) => {
       };
     }
     case RESERVE_ERROR: {
-      console.log('bbbbbbbbbbbbbbbb');
 
       return {
         ...state,
