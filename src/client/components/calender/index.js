@@ -18,7 +18,6 @@ class Basic extends Component {
   handleTime(slotInfo) {
     this.props.reserve(slotInfo.start.toLocaleString());
   }
-
   render() {
     return (
       <div style={{ width: '100%' }}>

@@ -112,3 +112,6 @@ input[type='submit']:hover {
 .sytleCalender = {
   height: '320px';
 }
+.skylight-dialog{
+  top: 40% !important;
+}

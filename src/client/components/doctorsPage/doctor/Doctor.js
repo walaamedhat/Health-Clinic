@@ -34,6 +34,7 @@ class Doctor extends Component {
     const validateDate = validate(this.state.name, this.state.phone);
     const err = validateDate.isError;
     if (!err) {
+      console.log('jjnnkmlk', this.props.bookError);
       this.setState({ booking: true });
       this.simpleDialog2.show();
       this.props.reserveData(this.state);
@@ -58,7 +59,7 @@ class Doctor extends Component {
     };
     const mySmallDialog = {
       height: '104px',
-      top: '65%'
+      marginTop: '-42px'
     };
     // const { booking } = this.state;
 
@@ -124,7 +125,7 @@ class Doctor extends Component {
           hideOnOverlayClicked
           ref={ref => (this.simpleDialog2 = ref)}
         >
-          <h1>Booking Successfully</h1>
+          <h2>{this.props.message}</h2>
         </SkyLight>
       </div>
     );
@@ -140,7 +141,14 @@ Doctor.propTypes = {
   reserveData: PropTypes.func,
   reserveAppointment: PropTypes.func,
   onChange: PropTypes.func,
-  time: PropTypes.string
+  time: PropTypes.string,
+  message: PropTypes.string
 };
 
-export default connect(null, dataPatient)(Doctor);
+const mapStateToProps = state => {
+  return { message: state.reserve.message };
+
+  console.log('state', state);
+};
+
+export default connect(mapStateToProps, dataPatient)(Doctor);
