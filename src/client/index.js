@@ -1,23 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import store from './store';
 import Home from './components/home';
-// import Popup from './components/popup';
 import DoctorsPage from './components/doctorsPage';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <div className='app'>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/doctors/:cityName' component={DoctorsPage} />
+          <Redirect to='/' />
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById('root')
 );
-// if (this.state.booking) {<Popup />}

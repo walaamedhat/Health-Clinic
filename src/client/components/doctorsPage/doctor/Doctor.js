@@ -5,7 +5,6 @@ import * as dataPatient from '../../../actions/reserveDataPatient';
 import PropTypes from 'prop-types';
 import SkyLight from 'react-skylight';
 import Basic from '../../calender';
-import Popup from '../../popup/Popup';
 import validate from './validate';
 class Doctor extends Component {
   constructor(props) {
@@ -36,6 +35,7 @@ class Doctor extends Component {
     const err = validateDate.isError;
     if (!err) {
       this.setState({ booking: true });
+      this.simpleDialog2.show();
       this.props.reserveData(this.state);
       this.props.reserveAppointment();
     } else {
@@ -56,11 +56,14 @@ class Doctor extends Component {
     const sytleCalender = {
       height: '320px'
     };
-    const { booking } = this.state;
+    const mySmallDialog = {
+      height: '104px',
+      top: '65%'
+    };
+    // const { booking } = this.state;
 
     return (
       <div className='doctor'>
-        {booking ? <Popup /> : <div />}
         <div className='class-h2'>
           <h2 className='name'>Dr.{this.props.name}</h2>
         </div>
@@ -115,6 +118,13 @@ class Doctor extends Component {
               <div className='errorMassage'>{this.state.phoneError}</div>
             </div>
           </div>
+        </SkyLight>
+        <SkyLight
+          dialogStyles={mySmallDialog}
+          hideOnOverlayClicked
+          ref={ref => (this.simpleDialog2 = ref)}
+        >
+          <h1>Booking Successfully</h1>
         </SkyLight>
       </div>
     );

@@ -1,6 +1,5 @@
 require('env2')('config.env');
 const express = require('express');
-const path = require('path');
 const app = express();
 const routes = require('./controllers/routes');
 
