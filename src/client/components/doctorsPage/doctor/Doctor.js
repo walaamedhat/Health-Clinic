@@ -31,6 +31,7 @@ class Doctor extends Component {
     this.setState({ value: event.target.value });
   }
   handleCalender() {
+    this.props.event(this.props.location,this.props.id);
     this.simpleDialog.show();
   }
   handleSubmit(event) {
@@ -143,13 +144,20 @@ Doctor.propTypes = {
   reserveAppointment: PropTypes.func,
   onChange: PropTypes.func,
   time: PropTypes.string,
-  message: PropTypes.string
+  message: PropTypes.string,
+  event: PropTypes.func
 };
 
 const mapStateToProps = state => {
   return { message: state.reserve.message };
 };
 
-export default connect(mapStateToProps, { dataPatient, calenderDoctor })(
+const mapDispatchToProps = {
+  reserveData: dataPatient.reserveData,
+  reserveAppointment: dataPatient.reserveAppointment,
+
+  event: calenderDoctor.fetchDoctorsCalender
+};
+export default connect(mapStateToProps, mapDispatchToProps)(
   Doctor
 );

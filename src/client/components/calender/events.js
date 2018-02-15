@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Meeting',
-    // allDay: true,
+    allDay: true,
     start: new Date(2018, 1, 15, 8, 0, 0, 0),
     end: new Date(2018, 1, 15, 8, 10, 0, 0)
   },
