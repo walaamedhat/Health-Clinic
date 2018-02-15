@@ -56,7 +56,6 @@ DoctorView.propTypes = {
   appointments: PropTypes.array,
   error: PropTypes.string,
   isFetching: PropTypes.bool,
-  match: PropTypes.object,
   id_doctor: PropTypes.string
 };
 
