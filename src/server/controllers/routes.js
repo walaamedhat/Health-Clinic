@@ -1,17 +1,13 @@
 const express = require('express');
-const path = require('path');
 const router = express.Router();
 
 const doctors = require('./doctors');
 const reserve = require('./reserve');
+const events = require('./events');
 
 router.get('/doctors/:cityName', doctors.get);
+router.get('/calender/:cityName/:idDoctor', events.get);
 
 router.post('/reserve', reserve.post);
-// .get('*', function(req, res) {
-//   res.sendFile(indexPath);
-// });
 
 module.exports = router;
-
-const indexPath = path.join(__dirname, '../../public', 'index.html');

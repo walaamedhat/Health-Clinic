@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack && babel src --out-dir lib --copy-files",
     "start": "node ./src/server/",
-    "dev:build": "webpack",
+    "dev:build": "webpack --watch",
     "dev:start": "nodemon --exec babel-node ./src/server/",
     "test": "NODE_ENV=testing node ./test.js | tap-spec",
     "lint": "eslint src --fix",

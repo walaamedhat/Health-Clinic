@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './doctor.css';
 import * as dataPatient from '../../../actions/reserveDataPatient';
+import * as calenderDoctor from '../../../actions/doctorsCalender';
 import PropTypes from 'prop-types';
 import SkyLight from 'react-skylight';
 import Basic from '../../calender';
@@ -12,6 +13,7 @@ class Doctor extends Component {
     this.state = {};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCalender = this.handleCalender.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -28,13 +30,15 @@ class Doctor extends Component {
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
-
+  handleCalender() {
+    this.simpleDialog.show();
+    console.log(this.props.id, 'dddddddddddddddddddddd');
+  }
   handleSubmit(event) {
     event.preventDefault();
     const validateDate = validate(this.state.name, this.state.phone);
     const err = validateDate.isError;
     if (!err) {
-      console.log('jjnnkmlk', this.props.bookError);
       this.setState({ booking: true });
       this.simpleDialog2.show();
       this.props.reserveData(this.state);
@@ -78,7 +82,7 @@ class Doctor extends Component {
             name={this.props.name}
             id={this.props.id}
             src='/assets/calender.png'
-            onClick={() => this.simpleDialog.show()}
+            onClick={this.handleCalender}
           />
         </div>
         <SkyLight
@@ -147,8 +151,8 @@ Doctor.propTypes = {
 
 const mapStateToProps = state => {
   return { message: state.reserve.message };
-
-  console.log('state', state);
 };
 
-export default connect(mapStateToProps, dataPatient)(Doctor);
+export default connect(mapStateToProps, { dataPatient, calenderDoctor })(
+  Doctor
+);
