@@ -4,8 +4,7 @@ exports.get = (req, res) => {
   view.viewSecretaryAppiontments(location,(dataBaseConnectionErorr, secretaryAppointments) => {
     if (dataBaseConnectionErorr) res.status(500).send(dataBaseConnectionErorr);
 
-    const data = secretaryAppointments;
-    res.send(data);
+    res.send(secretaryAppointments);
   }
   );
 };
