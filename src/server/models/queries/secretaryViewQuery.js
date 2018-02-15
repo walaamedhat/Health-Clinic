@@ -14,11 +14,8 @@ const viewSecretaryAppiontments = (location , cb) => {
   };
   dbConnection.query(sql, (dataBaseConnectionErorr, secretaryAppointments) => {
     if (dataBaseConnectionErorr) return cb(dataBaseConnectionErorr);
-    if (secretaryAppointments.rows === null) {
-      cb(null, null);
-    } else {
-      return cb(null, secretaryAppointments.rows);
-    }
+
+    return cb(null, secretaryAppointments.rows);
   });
 };
 
