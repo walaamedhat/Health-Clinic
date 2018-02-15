@@ -35,7 +35,7 @@ class DoctorViewPage extends Component {
             </div>
           </div>
           <div className='button2DocView'>
-            <a className='btnDocView redDocView'>Start</a>
+            <a className='btnDocView redDocView startDocView'>Start</a>
             <p className='button2DocView paddingDocView'>00:00:00</p>
           </div>
           <div className='calendarDocView'>Calendar</div>

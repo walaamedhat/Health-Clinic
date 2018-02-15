@@ -158,6 +158,17 @@
   background-color: #FF6656;
 }
 
+
+.startDocView {
+  margin-top: 25px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  width: 95px;
+  height: 34px;
+}
+
 .button2DocView {
   display: flex;
   justify-content: center;

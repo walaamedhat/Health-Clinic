@@ -1,6 +1,6 @@
 const getAge = dob => {
   if (dob === null) {
-    return console.log('error in date of birth');
+    return 0;
   } else {
     const today = new Date();
     const dateOfBirth = new Date(dob);
