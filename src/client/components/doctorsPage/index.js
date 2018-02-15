@@ -35,6 +35,7 @@ class DoctorsPage extends Component {
               name={doctor.name}
               description={doctor.description}
               position={doctor.position}
+              location={doctor.location}
             />
           ))}
         </div>
