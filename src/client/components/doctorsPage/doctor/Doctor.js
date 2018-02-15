@@ -2,36 +2,53 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './doctor.css';
 import * as dataPatient from '../../../actions/reserveDataPatient';
+import * as calenderDoctor from '../../../actions/doctorsCalender';
 import PropTypes from 'prop-types';
 import SkyLight from 'react-skylight';
 import Basic from '../../calender';
-
+import validate from './validate';
 class Doctor extends Component {
   constructor(props) {
     super(props);
     this.state = {};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCalender = this.handleCalender.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
-      id: e.target.id
+      id: e.target.id,
+      nameError: '',
+      phoneError: '',
+      booking: false
     });
   }
 
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
-
-  handleSubmit(event) {
-    this.props.reserveData(this.state);
-    this.props.reserveAppointment();
-    event.preventDefault();
+  handleCalender() {
+    this.simpleDialog.show();
   }
-
+  handleSubmit(event) {
+    event.preventDefault();
+    const validateDate = validate(this.state.name, this.state.phone);
+    const err = validateDate.isError;
+    if (!err) {
+      this.setState({ booking: true });
+      this.simpleDialog2.show();
+      this.props.reserveData(this.state);
+      this.props.reserveAppointment();
+    } else {
+      this.setState({
+        ...this.state,
+        ...validateDate.errors
+      });
+    }
+  }
   render() {
     const myBigGreenDialog = {
       backgroundColor: '#00897B',
@@ -41,6 +58,10 @@ class Doctor extends Component {
     };
     const sytleCalender = {
       height: '320px'
+    };
+    const mySmallDialog = {
+      height: '104px',
+      marginTop: '-42px'
     };
 
     return (
@@ -58,7 +79,7 @@ class Doctor extends Component {
             name={this.props.name}
             id={this.props.id}
             src='/assets/calender.png'
-            onClick={() => this.simpleDialog.show()}
+            onClick={this.handleCalender}
           />
         </div>
         <SkyLight
@@ -81,6 +102,7 @@ class Doctor extends Component {
                   onChange={this.handleInputChange}
                   className='patientname'
                   placeholder='Name'
+                  required
                 />
                 <input
                   id={this.props.id}
@@ -90,11 +112,21 @@ class Doctor extends Component {
                   onChange={this.handleInputChange}
                   className='phone'
                   placeholder='Phone'
+                  required
                 />
                 <input type='submit' value='Book' />
               </form>
+              <div className='errorMassage'>{this.state.nameError}</div>
+              <div className='errorMassage'>{this.state.phoneError}</div>
             </div>
           </div>
+        </SkyLight>
+        <SkyLight
+          dialogStyles={mySmallDialog}
+          hideOnOverlayClicked
+          ref={ref => (this.simpleDialog2 = ref)}
+        >
+          <h2>{this.props.message}</h2>
         </SkyLight>
       </div>
     );
@@ -109,7 +141,15 @@ Doctor.propTypes = {
   description: PropTypes.string,
   reserveData: PropTypes.func,
   reserveAppointment: PropTypes.func,
-  time: PropTypes.string
+  onChange: PropTypes.func,
+  time: PropTypes.string,
+  message: PropTypes.string
 };
 
-export default connect(null, dataPatient)(Doctor);
+const mapStateToProps = state => {
+  return { message: state.reserve.message };
+};
+
+export default connect(mapStateToProps, { dataPatient, calenderDoctor })(
+  Doctor
+);

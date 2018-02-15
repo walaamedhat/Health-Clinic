@@ -7,30 +7,28 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { reserveTime } from '../../actions/reserve';
 import PropTypes from 'prop-types';
 
-BigCalendar.momentLocalizer(moment);
-
 class Basic extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
+    this.state = { events };
+    BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
     this.handleTime = this.handleTime.bind(this);
   }
 
   handleTime(slotInfo) {
     this.props.reserve(slotInfo.start.toLocaleString());
-    alert(`You book appointment time :${slotInfo.start.toLocaleString()}`);
   }
-
   render() {
     return (
       <div style={{ width: '100%' }}>
         <BigCalendar
           selectable
-          events={events}
+          culture='en'
+          events={this.state.events}
+          views={['month', 'week', 'day']}
           step={10}
-          views={['day', 'week']}
           timeslots={1}
           defaultView='day'
-          scrollToTime={new Date(1970, 1, 1, 6)}
           defaultDate={new Date()}
           min={new Date(0, 0, 0, 8, 0, 0, 0)}
           max={new Date(0, 0, 0, 16, 0, 0, 0)}
