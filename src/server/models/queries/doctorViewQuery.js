@@ -13,8 +13,9 @@ const viewDoctorsAppiontments = (id_doctor , cb) => {
   };
   dbConnection.query(sql, (dataBaseConnectionErorr, appointments) => {
     if (dataBaseConnectionErorr) return cb(dataBaseConnectionErorr);
-      return cb(null, appointments.rows);
-    }
+
+    return cb(null, appointments.rows);
+
   });
 };
 
