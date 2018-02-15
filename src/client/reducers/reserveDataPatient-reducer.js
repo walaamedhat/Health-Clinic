@@ -10,6 +10,7 @@ const data = (state = initialState, action) => {
     case RESERVE_DATA_PATIENT: {
       return {
         ...state,
+        error: undefined,
         dataPatient: action.payload
       };
     }

@@ -1,0 +1,15 @@
+.popupsccessful {
+  height: 140px;
+  width: 250px;
+  background-color: white;
+  color: black;
+  position: fixed;
+  z-index: 101;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 5px #66d49d52;
+  top: 40%;
+  left: 40%;
+  font-size: 28px;
+  text-align: center;
+}

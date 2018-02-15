@@ -44,6 +44,9 @@ h6 {
   display: flex;
   justify-content: center;
 }
+.img:hover {
+  cursor: pointer;
+}
 .www {
   width: 100%;
   flex-direction: column;
@@ -72,14 +75,43 @@ input[type='text'] {
 }
 
 input[type='text']:focus {
-  border: 3px solid #555;
+  border: 3px solid #073a4a;
+  border-radius: 5px;
+  font-size: 18px;
 }
 input[type='submit'] {
   padding: 12px 20px;
   font-size: 27px;
   width: 30%;
   margin: 8px 0;
-  background-color: #56ccf2;
+  background-color: #073a4a;
   border: none;
   color: white;
+  border-radius: 26px;
+}
+input[type='submit']:hover {
+  background-color: #0c1a2770;
+}
+.errorMassage {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.rbc-toolbar-label {
+  color: #0e3a49;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.myBigGreenDialog {
+  backgroundcolor: '#00897B';
+  color: '#ffffff';
+  height: 'auto';
+  textalign: 'center';
+}
+.sytleCalender = {
+  height: '320px';
+}
+.skylight-dialog{
+  top: 40% !important;
 }
