@@ -11,7 +11,7 @@ class Navbar extends Component {
         </div>
         <ul className='firstUl'>
           <li>
-            <a href='/'>Home</a>
+            <a href='#'>Home</a>
           </li>
           <li>
             <a href='#doctors'>Doctors</a>
