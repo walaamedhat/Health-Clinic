@@ -65,7 +65,6 @@ class Doctor extends Component {
       height: '104px',
       marginTop: '-42px'
     };
-    // const { booking } = this.state;
 
     return (
       <div className='doctor'>
