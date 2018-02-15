@@ -7,8 +7,6 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { reserveTime } from '../../actions/reserve';
 import PropTypes from 'prop-types';
 
-// BigCalendar.momentLocalizer(moment);
-
 class Basic extends Component {
   constructor(props, context) {
     super(props, context);

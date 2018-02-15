@@ -32,7 +32,6 @@ class Doctor extends Component {
   }
   handleCalender() {
     this.simpleDialog.show();
-    console.log(this.props.id, 'dddddddddddddddddddddd');
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -49,7 +48,6 @@ class Doctor extends Component {
         ...validateDate.errors
       });
     }
-    console.log('state is here :', this.state);
   }
   render() {
     const myBigGreenDialog = {

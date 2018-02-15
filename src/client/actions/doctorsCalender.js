@@ -11,8 +11,6 @@ export const calenderFetchStart = () => {
 };
 
 export const calenderFetchSuccess = payload => {
-  console.log(payload, 'payload is here');
-
   return {
     type: CALENDER_FETCH_SUCCESS,
     payload
