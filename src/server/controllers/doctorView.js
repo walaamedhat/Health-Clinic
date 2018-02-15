@@ -7,8 +7,8 @@ exports.get = (req, res) => {
     else {
       view.waitingPatients(id_doctor, (dataBaseConnectionErorrWaiting, waitingCount) => {
         if (dataBaseConnectionErorrWaiting) res.status(500).send(dataBaseConnectionErorrWaiting);
-        if (appointments[0] === undefined) {
-          res.send(null);
+        if (appointments.length === 0) {
+          res.send(appointments);
         } else {
           const data = appointments.concat(waitingCount);
           const dob = data[0].dob;
