@@ -1,12 +1,23 @@
-.greenNavDocView{
+.greenNavDocView {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 51px;
-  background-color: #66D49D;
+  background-color: #66d49d;
 }
-
+.circle {
+  color: white;
+  background-color: red;
+  text-align: center;
+  border-radius: 11px;
+  font-weight: bold;
+  height: 19px;
+  width: 20px;
+  position: relative;
+  left: -26px;
+  top: -11px;
+}
 .left-sideDocView {
   display: flex;
   justify-content: space-between;
@@ -46,7 +57,6 @@
   color: #fff;
 }
 
-
 .hrDocView {
   display: flex;
   width: 40%;
@@ -55,7 +65,7 @@
 }
 
 .bell {
-  font-size:24px;
+  font-size: 24px;
   margin: 18px;
   bottom: 0;
 }
@@ -73,6 +83,8 @@
 .bookingCountDocView {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
+  color: #66d49d;
 }
 
 .containerDocView {
@@ -98,8 +110,13 @@
   flex-direction: row;
   align-content: center;
   padding-left: 35px;
+  padding-top: 25px;
 }
 
+.bigcontainer {
+  border-style: dotted;
+  padding-top: 25px;
+}
 .first-elmDocView {
   display: flex;
   flex-direction: column;
@@ -113,7 +130,13 @@
   flex-direction: column;
   padding-left: 15px;
 }
+.second-elmDocView p input {
+  width: 98%;
+}
 
+.item {
+  color: #66d49d;
+}
 .noteDocView {
   display: flex;
   font-size: 18px;
@@ -149,15 +172,14 @@
   display: flex;
   justify-content: center;
   background-color: #e74c3c;
-  box-shadow: 0px 5px 0px 0px #CE3323;
+  box-shadow: 0px 5px 0px 0px #ce3323;
   width: 40px;
   height: 30px;
 }
 
 .redDocView:hover {
-  background-color: #FF6656;
+  background-color: #ff6656;
 }
-
 
 .startDocView {
   margin-top: 25px;

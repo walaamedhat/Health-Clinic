@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as doctorViewAction from '../../actions/doctorView';
 import DoctorViewPage from './doctorView/DoctorViewPage';
 import DoctorViewHeader from './doctorView/DoctorViewHeader';
+import Footer from '../footer/Footer';
 
 class DoctorView extends Component {
   componentDidMount() {
@@ -12,39 +13,26 @@ class DoctorView extends Component {
     fetchDoctorView(this.props.match.params.id_doctor);
   }
   render() {
-    const { isFetching , error , appointments } = this.props;
+    const { isFetching, error, appointments } = this.props;
+    console.log(appointments, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkk');
 
     return (
       <div>
         <div>
-          <DoctorViewHeader
-          />
+          <DoctorViewHeader />
         </div>
         <div>
-          {
-            isFetching && (
-              <center className='center'>
-                <BarLoader
-                  color={'#66D49D'}
-                  loading={isFetching}
-                  width={200}
-                />
-              </center>
-            )
-          }
-          {
-            error && (
-              <div className='appointments-error'>
-                { error }
-              </div>
-            )
-          }
+          {isFetching && (
+            <center className='center'>
+              <BarLoader color={'#66D49D'} loading={isFetching} width={200} />
+            </center>
+          )}
+          {error && <div className='appointments-error'>{error}</div>}
 
-          <DoctorViewPage
-
-            appointments={appointments}
-
-          />
+          <DoctorViewPage appointments={appointments} />
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     );

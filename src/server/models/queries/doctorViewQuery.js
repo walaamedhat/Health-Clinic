@@ -1,6 +1,6 @@
 const dbConnection = require('../database/dbConnection');
 
-const viewDoctorsAppiontments = (id_doctor , cb) => {
+const currentPatient = (id_doctor, cb) => {
   const sql = {
     text: `SELECT patients.name AS patient_name, patients.note, patients.dob, patients.visit,
                   patients.interval, patients.time, doctors.name AS doctor_name
@@ -11,15 +11,14 @@ const viewDoctorsAppiontments = (id_doctor , cb) => {
 
     values: [id_doctor]
   };
-  dbConnection.query(sql, (dataBaseConnectionErorr, appointments) => {
-    if (dataBaseConnectionErorr) return cb(dataBaseConnectionErorr);
+  dbConnection.query(sql, (erorr, appointmentdata) => {
+    if (erorr) return cb(erorr);
 
-    return cb(null, appointments.rows);
-
+    return cb(null, appointmentdata.rows);
   });
 };
 
-const waitingPatients = (id_doctor, cb) => {
+const allPatients = (id_doctor, cb) => {
   const sql = {
     text: `SELECT COUNT(status)
            FROM appointments
@@ -32,7 +31,21 @@ const waitingPatients = (id_doctor, cb) => {
     return cb(null, appointments.rows);
   });
 };
+const waiting = (id_doctor, cb) => {
+  const sql = {
+    text: `SELECT COUNT(id_patient)
+           FROM appointments
+           WHERE id_doctor = $1 and status=$2`,
+    values: [id_doctor, 'waiting']
+  };
+  dbConnection.query(sql, (erorr, waitingNumber) => {
+    if (erorr) return cb(erorr);
+
+    return cb(null, waitingNumber.rows);
+  });
+};
 module.exports = {
-  viewDoctorsAppiontments,
-  waitingPatients
+  currentPatient,
+  allPatients,
+  waiting
 };

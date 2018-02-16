@@ -11,8 +11,6 @@ router.get('/doctors/:cityName', doctors.get);
 router.get('/doctor/:id_doctor', doctorView.get);
 router.get('/secretary/:location', secretaryView.get);
 
-const events = require('./events');
-
 router.get('/calender/:cityName/:idDoctor', events.get);
 
 router.post('/reserve', reserve.post);
