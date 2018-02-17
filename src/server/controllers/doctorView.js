@@ -15,7 +15,13 @@ exports.get = (req, res) => {
           patientdata[0] = Object.assign(patientdata[0], {
             age: getAge(dob)
           });
-          res.send(data);
+          view.waiting(id_doctor, (er, waitingCount) => {
+            if (er) res.status(500).send(er);
+            else {
+              const fullData = data.concat(waitingCount);
+              res.send(fullData);
+            }
+          });
         }
       });
     }

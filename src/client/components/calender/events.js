@@ -7,13 +7,13 @@ export default [
   },
   {
     title: 'Some Event',
-    // allDay: true,
+    allDay: true,
     start: new Date(2018, 1, 15, 10, 0, 0, 0),
     end: new Date(2018, 1, 15, 10, 10, 0, 0)
   },
   {
     title: 'Some Event',
-    // allDay: true,
+    allDay: true,
     start: new Date(2018, 1, 15, 8, 20, 0, 0),
     end: new Date(2018, 1, 15, 8, 30, 0, 0)
   },

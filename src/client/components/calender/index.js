@@ -42,7 +42,7 @@ class Basic extends Component {
           defaultDate={new Date()}
           min={new Date(0, 0, 0, 8, 0, 0, 0)}
           max={new Date(0, 0, 0, 16, 0, 0, 0)}
-          onSelectEvent={event => alert(event.title)}
+          onSelectEvent={event => alert('Choose another appointment')}
           onSelectSlot={this.handleTime}
         />
       </div>
@@ -51,7 +51,7 @@ class Basic extends Component {
 }
 Basic.propTypes = {
   reserve: PropTypes.func,
-  event: PropTypes.object
+  event: PropTypes.array
 };
 const mapStateToProps = state => {
   return { event: state.events.events };

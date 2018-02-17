@@ -11,8 +11,6 @@ export const calenderFetchStart = () => {
 };
 
 export const calenderFetchSuccess = payload => {
-  console.log(payload,'aaaaaaaaaa');
-
   return {
     type: CALENDER_FETCH_SUCCESS,
     payload
@@ -26,9 +24,9 @@ export const calenderFetchFailure = massage => {
   };
 };
 
-export const fetchDoctorsCalender = (cityName, idDoctor) => dispatch => {
+export const fetchDoctorsCalender = idDoctor => dispatch => {
   dispatch(calenderFetchStart());
-  fetch(`/api/v1/calender/${cityName}/${idDoctor}`)
+  fetch(`/api/v1/calender/${idDoctor}`)
     .then(res => {
       if (res.status >= 400) {
         throw new Error('Bad response from sarver');

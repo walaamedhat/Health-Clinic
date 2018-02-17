@@ -8,12 +8,12 @@ class About extends Component {
       <div id='aboutUs' className='aboutUs'>
         <div className='container-about'>
           <div className='baseAbout'>
-            <i className='fas fa-users' />{' '}
-          </div>{' '}
-        </div>{' '}
+            <i className='fas fa-users' />
+          </div>
+        </div>
         <div className='textA'>
           <h1>About Us</h1>
-        </div>{' '}
+        </div>
         <div>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -29,7 +29,7 @@ class About extends Component {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </p>
-        </div>{' '}
+        </div>
       </div>
     );
   }

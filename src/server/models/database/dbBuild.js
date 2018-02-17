@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 
 const dbConnection = require('./dbConnection');
@@ -9,6 +8,6 @@ dbConnection.query(sql, (errDB, result) => {
   if (errDB) {
     console.log('Error', errDB);
   } else {
-    console.log('Building successfuly!');
+    console.log('Building successfuly!', result);
   }
 });

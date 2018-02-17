@@ -6,6 +6,13 @@
   height: 51px;
   background-color: #66d49d;
 }
+.appointmentNum {
+  color: red;
+}
+.calenderD {
+  height: 500px;
+  overflow: scroll;
+}
 .circle {
   color: white;
   background-color: red;
@@ -48,6 +55,7 @@
   position: relative;
   justify-content: center;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .waitingDocView {
@@ -189,6 +197,7 @@
   padding-right: 0px;
   width: 95px;
   height: 34px;
+  cursor: pointer;
 }
 
 .button2DocView {

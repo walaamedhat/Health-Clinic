@@ -1,5 +1,4 @@
 import { React, Component } from 'react';
-import * as dataPatient from '../../../actions/reserveDataPatient';
 import PropTypes from 'prop-types';
 
 class Bookingform extends Component {

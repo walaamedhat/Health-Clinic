@@ -9,15 +9,12 @@ import ReactTable from 'react-table';
 import PropTypes from 'prop-types';
 
 class SecretaryViewPage extends Component {
-
   filterByState(list, state) {
     return list.filter(el => el.status === state);
   }
   render() {
     const { secretaryAppointments, changeStatus } = this.props;
-    if (!secretaryAppointments)
-
-      return <div />;
+    if (!secretaryAppointments) return <div />;
 
     return (
       <div className='flexSecView'>
@@ -50,12 +47,18 @@ class SecretaryViewPage extends Component {
                     {
                       Header: 'Confirm',
                       id: 'confirm',
-                      accessor: d => (<button onClick={() => changeStatus(d.id, 'waiting')} type='submit'>Confirm</button>)
+                      accessor: d => (
+                        <button
+                          onClick={() => changeStatus(d.id, 'waiting')}
+                          type='submit'
+                        >
+                          Confirm
+                        </button>
+                      )
                     }
                   ]
                 }
               ]}
-
               defaultPageSize={5}
               className='-striped -highlight'
             />
@@ -94,7 +97,6 @@ class SecretaryViewPage extends Component {
                   ]
                 }
               ]}
-
               defaultPageSize={5}
               className='-striped -highlight'
             />
@@ -103,7 +105,6 @@ class SecretaryViewPage extends Component {
         </div>
       </div>
     );
-
   }
 }
 

@@ -3,7 +3,7 @@
   clear: both;
   border-top: 2px solid gray;
   background-color: #66d49d;
-  position: absolute;
+  position: inherit;
   bottom: 0;
   display: flex;
   justify-content: center;

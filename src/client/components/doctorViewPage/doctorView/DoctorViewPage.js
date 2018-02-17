@@ -14,7 +14,11 @@ class DoctorViewPage extends Component {
           <div key={index}>
             <div>
               <h1 className='bookingCountDocView'>
-                You have {this.props.appointments[1].count} bookings for the day
+                You have
+                <span className='appointmentNum'>
+                  {this.props.appointments[1].count}
+                </span>
+                bookings for the day
               </h1>
             </div>
             <div className='bigcontainer'>
@@ -56,7 +60,6 @@ class DoctorViewPage extends Component {
               <a className='btnDocView redDocView startDocView'>Start</a>
               <p className='button2DocView paddingDocView'>00:00:00</p>
             </div>
-            <div className='calendarDocView'>Calendar</div>
           </div>
         );
       });
