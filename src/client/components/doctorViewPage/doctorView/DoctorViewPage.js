@@ -38,27 +38,28 @@ class DoctorViewPage extends Component {
                   <p>
                     Visits: <item className='item'>{item.visit}</item>
                   </p>
+                  <p>
+                    Notes: <item className='item'>{item.note}</item>
+                  </p>
                 </div>
                 <div className='second-elmDocView'>
                   <p>
                     Time Set Earlier: <item className='item'>{item.time}</item>
                   </p>
                   <p>
-                    Notes:
                     <input
                       type='text'
                       placeholder='Write Notes'
                       name='note'
                       className='noteDocView'
-                      value={item.note}
                     />
                   </p>
                 </div>
               </div>
-            </div>
-            <div className='button2DocView'>
-              <a className='btnDocView redDocView startDocView'>Start</a>
-              <p className='button2DocView paddingDocView'>00:00:00</p>
+              <div className='button2DocView'>
+                <a className='btnDocView redDocView startDocView'>Start</a>
+                <p className='button2DocView paddingDocView'>00:00:00</p>
+              </div>
             </div>
           </div>
         );

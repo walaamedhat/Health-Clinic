@@ -46,7 +46,7 @@ CREATE TABLE "appointments" (
 	"id_patient" INTEGER REFERENCES patients(id),
 	"id_doctor" INTEGER REFERENCES doctors(id),
 	"date" DATE NOT NULL,
-	"time-set" TIME NOT NULL UNIQUE,
+	"time-set" TIME NOT NULL,
 	"status" VARCHAR
 );
 

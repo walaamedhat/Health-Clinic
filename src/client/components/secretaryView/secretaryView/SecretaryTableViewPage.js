@@ -24,7 +24,7 @@ class SecretaryViewPage extends Component {
               data={this.filterByState(secretaryAppointments, 'out')}
               columns={[
                 {
-                  Header: 'Schedule',
+                  Header: 'Schedule for today',
                   columns: [
                     {
                       Header: 'Patient Name',
@@ -69,7 +69,7 @@ class SecretaryViewPage extends Component {
               data={this.filterByState(secretaryAppointments, 'waiting')}
               columns={[
                 {
-                  Header: 'Schedule',
+                  Header: 'Waiting List ',
                   columns: [
                     {
                       Header: 'Patient Name',

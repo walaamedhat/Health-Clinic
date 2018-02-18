@@ -43,6 +43,7 @@ class Doctor extends Component {
       this.simpleDialog2.show();
       this.props.reserveData(this.state);
       this.props.reserveAppointment();
+      this.setState({ value: '' });
     } else {
       this.setState({
         ...this.state,
