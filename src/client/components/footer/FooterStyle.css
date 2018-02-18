@@ -1,7 +1,7 @@
 #footer,
 .push {
   clear: both;
-  border-top: 2px solid gray;
+  border-top: 2px solid #00000069;
   background-color: #66d49d;
   position: inherit;
   bottom: 0;
