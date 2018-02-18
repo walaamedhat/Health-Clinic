@@ -26,6 +26,11 @@ class SecretaryView extends Component {
         <div>
           <SecretaryViewHeader />
         </div>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ textDecoration: 'underline', marginBottom: '58px' }}>
+            Secretary View{' '}
+          </h1>
+        </div>
         <div>
           <div className='midlleSecView'>
             <SecretaryCalendarView />

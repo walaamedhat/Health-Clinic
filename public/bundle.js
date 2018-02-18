@@ -13841,7 +13841,7 @@ var Footer = function (_Component) {
                 _react2.default.createElement(
                   'span',
                   { className: 'wmy' },
-                  'WMY'
+                  ' WMY'
                 )
               )
             )
@@ -14161,6 +14161,7 @@ var Basic = function (_Component) {
     key: 'handleTime',
     value: function handleTime(slotInfo) {
       this.props.reserve(slotInfo.start.toLocaleString());
+      this.onSlotChange(slotInfo);
     }
   }, {
     key: 'render',
@@ -14177,7 +14178,7 @@ var Basic = function (_Component) {
         var st = new Date(Date.UTC(y, m, d, h, i, s));
         var en = new Date(Date.UTC(y, m, d, h, i + 10, s));
 
-        return { title: _this2.props.event[j].title, start: st, end: en };
+        return { title: 'Booked', start: st, end: en };
       });
 
       return _react2.default.createElement(
@@ -51317,7 +51318,7 @@ var Navbar = function (_Component) {
             _react2.default.createElement(
               'a',
               { href: '#contactUs' },
-              'Coutact'
+              'Contact'
             )
           )
         ),
@@ -51329,7 +51330,7 @@ var Navbar = function (_Component) {
             null,
             _react2.default.createElement(
               'a',
-              { href: '#' },
+              { href: 'https://www.facebook.com/GENE.MEDICAL.LABS' },
               _react2.default.createElement('i', { className: 'fab fa-facebook-f' })
             )
           ),
@@ -51338,7 +51339,7 @@ var Navbar = function (_Component) {
             null,
             _react2.default.createElement(
               'a',
-              { href: '#' },
+              { href: 'https://www.twitter.com/GENE.MEDICAL.LABS' },
               _react2.default.createElement('i', { className: 'fab fa-twitter' })
             )
           ),
@@ -51347,7 +51348,7 @@ var Navbar = function (_Component) {
             null,
             _react2.default.createElement(
               'a',
-              { href: '#' },
+              { href: 'https://www.google.com/GENE.MEDICAL.LABS' },
               _react2.default.createElement('i', { className: 'fab fa-google-plus-g' })
             )
           )
@@ -51410,7 +51411,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "body {\n  width: 100%;\n  height: 100vh;\n  margin: 0;\n  padding: 0;\n}\n.h1 {\n  margin-right: 10vw;\n  margin-left: 1vw;\n  color: #55635c;\n  font-family: serif;\n}\n\n.logo {\n  display: flex;\n}\n.navbar {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-bottom: 0;\n  position: fixed;\n  z-index: 300;\n  background-color: white;\n  width: 100%;\n}\n\n.navbar > ul {\n  display: flex;\n  list-style: none;\n}\n.firstUl {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  margin-bottom: 0;\n}\n\n.firstUl li a {\n  color: #66d49d;\n  font-size: 18px;\n  margin-right: 15px;\n  font-weight: bold;\n  text-decoration: none;\n}\n.firstUl li a:hover {\n  color: #55635c;\n}\n\n.secondUl li a {\n  color: #55635c;\n  font-size: 18px;\n  margin-left: 10px;\n}\n\n.secondUl li a:hover {\n  color: #66d49d;\n}\n\n.login {\n  display: flex;\n  background-color: #3b5998;\n  align-self: center;\n  padding: 5px;\n  border-radius: 5px;\n  align-items: center;\n  margin-left: 10px;\n}\n.login > a {\n  color: #fff;\n  text-decoration: none;\n  text-align: center;\n}\n.login:hover {\n  background-color: #8b9dc3;\n}\n\n@media only screen and (max-width: 1024px) {\n  .h1 {\n    font-size: 23px;\n  }\n}\n", ""]);
+exports.push([module.i, "body {\n  width: 100%;\n  height: 100vh;\n  margin: 0;\n  padding: 0;\n}\n.h1 {\n  margin-right: 10vw;\n  margin-left: 1vw;\n  color: #55635c;\n  font-family: serif;\n}\n\n.logo {\n  display: flex;\n}\n.navbar {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-bottom: 0;\n  position: fixed;\n  z-index: 300;\n  background-color: white;\n  width: 100%;\n}\n\n.navbar > ul {\n  display: flex;\n  list-style: none;\n}\n.firstUl {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  margin-bottom: 0;\n}\n\n.firstUl li a {\n  color: #66d49d;\n  font-size: 18px;\n  margin-right: 15px;\n  font-weight: bold;\n  text-decoration: none;\n}\n.firstUl li a:hover {\n  color: #55635c;\n}\n\nul.secondUl{\n  margin: 0;\n}\n.secondUl li a {\n  color: #55635c;\n  font-size: 18px;\n  margin-left: 10px;\n}\n\n.secondUl li a:hover {\n  color: #66d49d;\n}\n\n.login {\n  display: flex;\n  background-color: #3b5998;\n  align-self: center;\n  padding: 5px;\n  border-radius: 5px;\n  align-items: center;\n  margin-left: 10px;\n}\n.login > a {\n  color: #fff;\n  text-decoration: none;\n  text-align: center;\n}\n.login:hover {\n  background-color: #8b9dc3;\n}\n\n@media only screen and (max-width: 1024px) {\n  .h1 {\n    font-size: 23px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -51619,7 +51620,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, ".slideshow-wrapper img {\n  height: 80vh;\n}\n\n.button {\n  text-decoration: none;\n  background: #66d49d;\n  font-size: 24px;\n  text-align: center;\n  padding: 10px;\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  top: 58%;\n  left: 41vw;\n  border-radius: 10px;\n}\n.button > a {\n  color: white;\n  text-decoration: none;\n}\n.button > a:hover {\n  color: black;\n}\n.sliderbar > .container {\n  margin: 0 !important;\n  width: 100%;\n  padding: 0px;\n}\n\n@media only screen and (max-width: 1024px) {\n  .slideshow-wrapper img {\n    height: 50vh;\n  }\n  .button {\n    top: 35%;\n    left: 37vw;\n  }\n}\n", ""]);
+exports.push([module.i, ".slideshow-wrapper img {\n    height: 83vh;\n    margin-top: 72px;\n}\n\n.button {\n  text-decoration: none;\n  background: #66d49d;\n  font-size: 24px;\n  text-align: center;\n  padding: 10px;\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  top: 60%;\n  left: 39vw;\n  border-radius: 10px;\n}\n.button > a {\n  color: white;\n  text-decoration: none;\n}\n.button > a:hover {\n  color: black;\n}\n.sliderbar > .container {\n  margin: 0 !important;\n  width: 100%;\n  padding: 0px;\n}\n\n@media only screen and (max-width: 1024px) {\n  .slideshow-wrapper img {\n    height: 50vh;\n  }\n  .button {\n    top: 35%;\n    left: 37vw;\n  }\n}\n", ""]);
 
 // exports
 
@@ -52932,7 +52933,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "#footer,\n.push {\n  clear: both;\n  border-top: 2px solid gray;\n  background-color: #66d49d;\n  position: inherit;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}\n\n.footer-center {\n  width: 100%;\n  margin: 0 auto;\n  height: 4em;\n  padding-bottom: 2px;\n  display: flex;\n  justify-content: center;\n}\n\n.footer-copy {\n  font-family: Roboto;\n  font-style: normal;\n  font-weight: bold;\n  line-height: normal;\n  font-size: 20px;\n  text-align: center;\n  color: #ffff;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.wmy {\n  color: #eb5757;\n}\n", ""]);
+exports.push([module.i, "#footer,\n.push {\n  clear: both;\n  border-top: 2px solid #00000069;\n  background-color: #66d49d;\n  position: inherit;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}\n\n.footer-center {\n  width: 100%;\n  margin: 0 auto;\n  height: 4em;\n  padding-bottom: 2px;\n  display: flex;\n  justify-content: center;\n}\n\n.footer-copy {\n  font-family: Roboto;\n  font-style: normal;\n  font-weight: bold;\n  line-height: normal;\n  font-size: 20px;\n  text-align: center;\n  color: #ffff;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.wmy {\n  color: #eb5757;\n}\n", ""]);
 
 // exports
 
@@ -69747,6 +69748,16 @@ var SecretaryView = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
+          { style: { textAlign: 'center' } },
+          _react2.default.createElement(
+            'h1',
+            { style: { textDecoration: 'underline', marginBottom: '58px' } },
+            'Secretary View',
+            ' '
+          )
+        ),
+        _react2.default.createElement(
+          'div',
           null,
           _react2.default.createElement(
             'div',
@@ -69972,7 +69983,7 @@ exports = module.exports = __webpack_require__(8)(false);
 exports.push([module.i, "@import url(//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css);", ""]);
 
 // module
-exports.push([module.i, "body {\n  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',\n    Helvetica, Arial, 'Lucida Grande', sans-serif;\n  font-weight: 300;\n  font-size: 14px;\n}\n\n.midlleSecView {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n}\n\n.flexSecView {\n  flex: 1;\n}\n.rt-th {\n  font-size: 20px;\n  color: #66d49d;\n}\n\n.tablesSecView {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  text-align: center;\n}\n\n.logoSecView {\n  display: flex;\n  justify-content: center;\n  width: 77px;\n  height: 77px;\n  padding: inherit;\n  margin-top: 20px;\n}\n\n.btnChangeSecView {\n  padding: inherit;\n  font-size: 18px;\n  text-decoration: none;\n  margin: 20px;\n  color: red;\n  position: relative;\n  justify-content: center;\n  font-weight: bold;\n}\n\n.hrSecView {\n  display: flex;\n  width: 40%;\n  padding-right: 30px;\n  margin-bottom: 10px;\n}\n\n.calendarSecretaryView {\n  display: flex;\n  background-color: grey;\n  font-size: 100px;\n  justify-content: center;\n}\n\n.headSecView {\n  display: flex;\n  align-content: center;\n  justify-content: space-between;\n  padding-bottom: 15px;\n  flex-direction: row;\n  padding: inherit;\n}\n\n.firstPartSecView {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.secondPartSecView {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n}\n\n.containerSec {\n  margin: auto;\n  text-align: center;\n}\n\n.searchformSec {\n  display: inline;\n  font-size: 1em;\n  border-radius: 8em;\n  border: 0.1em solid rgba(218, 208, 190, 1);\n  box-shadow: 0 0 0.3em rgba(60, 60, 60, 0.4);\n  padding: 0.3em;\n  background: white;\n}\n\n.sSec {\n  width: 60px;\n  box-sizing: border-box;\n  border: 2px solid #ccc;\n  border-radius: 4px;\n  font-size: 16px;\n  background-color: white;\n  background-position: 10px 10px;\n  background-repeat: no-repeat;\n  padding: 12px 20px 12px 40px;\n  -webkit-transition: width 0.4s ease-in-out;\n  transition: width 0.4s ease-in-out;\n}\n\n.sSec:focus {\n  width: 100%;\n  opacity: 1;\n}\n\n.labelSec {\n  padding-left: 1px;\n  display: inline-block;\n  margin-top: 0.3em;\n  color: rgba(218, 208, 190, 1);\n  text-shadow: 0 0 0.1em rgba(60, 60, 60, 0.3);\n  position: relative;\n  left: 0.1em;\n}\n\n.titleSecView {\n  font-size: 48px;\n}\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',\n    Helvetica, Arial, 'Lucida Grande', sans-serif;\n  font-weight: 300;\n  font-size: 14px;\n}\n\n.midlleSecView {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n}\n\n.flexSecView {\n  flex: 1;\n}\n.rt-th {\n  font-size: 20px;\n  color: #66d49d;\n}\n\n.tablesSecView {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  text-align: center;\n}\n\n.logoSecView {\n  display: flex;\n  justify-content: center;\n  width: 77px;\n  height: 77px;\n}\n\n.btnChangeSecView {\n  padding: inherit;\n  font-size: 18px;\n  text-decoration: none;\n  margin: 20px;\n  color: red;\n  position: relative;\n  justify-content: center;\n  font-weight: bold;\n}\n\n.hrSecView {\n  display: flex;\n  width: 40%;\n  padding-right: 30px;\n  margin-bottom: 10px;\n}\n\n.calendarSecretaryView {\n  display: flex;\n  background-color: grey;\n  font-size: 100px;\n  justify-content: center;\n}\n\n.headSecView {\n  display: flex;\n  align-content: center;\n  justify-content: space-between;\n  flex-direction: row;\n  background-color: #66d49d;\n}\n\n.firstPartSecView {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.secondPartSecView {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n}\n\n.containerSec {\n  margin: auto;\n  text-align: center;\n}\n\n.searchformSec {\n  display: inline;\n  font-size: 1em;\n  border-radius: 8em;\n  border: 0.1em solid rgba(218, 208, 190, 1);\n  box-shadow: 0 0 0.3em rgba(60, 60, 60, 0.4);\n  padding: 0.3em;\n  background: white;\n}\n\n.sSec {\n  width: 60px;\n  box-sizing: border-box;\n  border: 2px solid #ccc;\n  border-radius: 4px;\n  font-size: 16px;\n  background-color: white;\n  background-position: 10px 10px;\n  background-repeat: no-repeat;\n  padding: 12px 20px 12px 40px;\n  -webkit-transition: width 0.4s ease-in-out;\n  transition: width 0.4s ease-in-out;\n}\n\n.sSec:focus {\n  width: 100%;\n  opacity: 1;\n}\n\n.labelSec {\n  padding-left: 1px;\n  display: inline-block;\n  margin-top: 0.3em;\n  color: rgba(218, 208, 190, 1);\n  text-shadow: 0 0 0.1em rgba(60, 60, 60, 0.3);\n  position: relative;\n  left: 0.1em;\n}\n\n.titleSecView {\n  font-size: 48px;\n  margin-right: 0;\n}\n", ""]);
 
 // exports
 
@@ -72562,12 +72573,16 @@ var SecretaryViewHeader = function (_Component) {
               _react2.default.createElement(
                 'label',
                 { htmlFor: 'sSec', className: 'labelSec' },
-                _react2.default.createElement('input', { type: 'text', value: '', placeholder: 'search', className: 'sSec' })
+                _react2.default.createElement('input', {
+                  type: 'text',
+                  value: '',
+                  placeholder: 'search',
+                  className: 'sSec'
+                })
               )
             )
           )
-        ),
-        _react2.default.createElement('hr', { className: 'hrSecView' })
+        )
       );
     }
   }]);
