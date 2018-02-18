@@ -14,16 +14,19 @@ class SecretaryViewHeader extends Component {
             <a className='btnChangeSecView'>Change Password</a>
             <div className='containerSec'>
               <label htmlFor='sSec' className='labelSec'>
-                <input type='text' value='' placeholder='search' className='sSec' />
+                <input
+                  type='text'
+                  value=''
+                  placeholder='search'
+                  className='sSec'
+                />
               </label>
             </div>
           </div>
         </div>
-        <hr className='hrSecView' />
       </div>
-
     );
-  };
+  }
 }
 
 export default SecretaryViewHeader;

@@ -15,6 +15,7 @@ class Basic extends Component {
 
   handleTime(slotInfo) {
     this.props.reserve(slotInfo.start.toLocaleString());
+    this.onSlotChange(slotInfo);
   }
   render() {
     const appointments = this.props.event.map((event, j) => {
@@ -27,7 +28,7 @@ class Basic extends Component {
       const st = new Date(Date.UTC(y, m, d, h, i, s));
       const en = new Date(Date.UTC(y, m, d, h, i + 10, s));
 
-      return { title: this.props.event[j].title, start: st, end: en };
+      return { title: 'Booked', start: st, end: en };
     });
 
     return (
