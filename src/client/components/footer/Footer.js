@@ -12,7 +12,7 @@ class Footer extends Component {
             <div className='footer-copy'>
               <p>
                 2018 Gene Med Labs .com © All Rights Reserved. Designed by
-                <span className='wmy'>WMY</span>
+                <span className='wmy'> WMY</span>
               </p>
             </div>
           </div>

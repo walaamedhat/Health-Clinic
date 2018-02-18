@@ -20,22 +20,22 @@ class Navbar extends Component {
             <a href='#aboutUs'>About Us</a>
           </li>
           <li>
-            <a href='#contactUs'>Coutact</a>
+            <a href='#contactUs'>Contact</a>
           </li>
         </ul>
         <ul className='secondUl'>
           <li>
-            <a href='#'>
+            <a href='https://www.facebook.com/GENE.MEDICAL.LABS'>
               <i className='fab fa-facebook-f' />
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a href='https://www.twitter.com/GENE.MEDICAL.LABS'>
               <i className='fab fa-twitter' />
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a href='https://www.google.com/GENE.MEDICAL.LABS'>
               <i className='fab fa-google-plus-g' />
             </a>
           </li>

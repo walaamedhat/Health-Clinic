@@ -1,5 +1,6 @@
 .slideshow-wrapper img {
-  height: 80vh;
+    height: 83vh;
+    margin-top: 72px;
 }
 
 .button {
@@ -11,8 +12,8 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 58%;
-  left: 41vw;
+  top: 60%;
+  left: 39vw;
   border-radius: 10px;
 }
 .button > a {
