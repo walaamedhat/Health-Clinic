@@ -31,7 +31,7 @@ class Doctor extends Component {
     this.setState({ value: event.target.value });
   }
   handleCalender() {
-    this.props.event(this.props.location,this.props.id);
+    this.props.event(this.props.id);
     this.simpleDialog.show();
   }
   handleSubmit(event) {
@@ -43,6 +43,7 @@ class Doctor extends Component {
       this.simpleDialog2.show();
       this.props.reserveData(this.state);
       this.props.reserveAppointment();
+      this.setState({ value: '' });
     } else {
       this.setState({
         ...this.state,
@@ -158,6 +159,4 @@ const mapDispatchToProps = {
 
   event: calenderDoctor.fetchDoctorsCalender
 };
-export default connect(mapStateToProps, mapDispatchToProps)(
-  Doctor
-);
+export default connect(mapStateToProps, mapDispatchToProps)(Doctor);

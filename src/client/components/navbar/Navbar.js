@@ -7,7 +7,7 @@ class Navbar extends Component {
       <div className='navbar'>
         <div className='logo'>
           <img src='/assets/logo.png' className='logo' alt='star' />
-          <h1>Gene Med Labs</h1>
+          <div className='h1'>Gene Med Labs</div>
         </div>
         <ul className='firstUl'>
           <li>

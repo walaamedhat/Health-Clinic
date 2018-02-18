@@ -13,18 +13,22 @@ class SecretaryView extends Component {
     fetchSecretaryView(this.props.match.params.location);
   }
   render() {
-    const { isFetching , error , secretaryAppointments } = this.props;
+    const { isFetching, error, secretaryAppointments } = this.props;
 
     return (
       <div>
+        {isFetching && (
+          <center className='center'>
+            <BarLoader color={'#66D49D'} loading={isFetching} width={200} />
+          </center>
+        )}
+        {error && <div className='appointments-error'> {error}</div>}
         <div>
-          <SecretaryViewHeader
-          />
+          <SecretaryViewHeader />
         </div>
         <div>
           <div className='midlleSecView'>
-            <SecretaryCalendarView
-            />
+            <SecretaryCalendarView />
             <SecretaryTableViewPage
               secretaryAppointments={secretaryAppointments}
             />
@@ -45,7 +49,6 @@ SecretaryView.propTypes = {
 };
 
 const mapStateToProps = state => {
-
   return {
     secretaryAppointments: state.secretaryAppointments.secretaryAppointments,
     error: state.secretaryAppointments.error,

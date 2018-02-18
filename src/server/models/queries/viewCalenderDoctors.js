@@ -5,9 +5,8 @@ const viewDoctorsEvents = (data, cb) => {
     text:
       'SELECT patients.name,appointments.date,appointments."time-set" FROM appointments JOIN ' +
       'doctors on appointments.id_doctor = doctors.id JOIN patients ' +
-      'on patients.id = appointments.id_patient where doctors.location = $1 ' +
-      'and appointments.id_doctor = $2',
-    values: [`${data.cityName}`, `${data.idDoctor}`]
+      'on patients.id = appointments.id_patient where appointments.id_doctor = $1 ',
+    values: [`${data.idDoctor}`]
   };
   dbConnection.query(sql, (dataBaseConnectionErorr, events) => {
     if (dataBaseConnectionErorr) return cb(dataBaseConnectionErorr);

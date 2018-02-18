@@ -12,7 +12,7 @@
   justify-content: center;
   position: absolute;
   top: 58%;
-  left: 39%;
+  left: 41vw;
   border-radius: 10px;
 }
 .button > a {
@@ -33,7 +33,7 @@
     height: 50vh;
   }
   .button {
-    top: 40%;
-    left: 20vh;
+    top: 35%;
+    left: 37vw;
   }
 }

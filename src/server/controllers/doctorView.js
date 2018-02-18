@@ -1,21 +1,28 @@
 const view = require('../models/queries/doctorViewQuery.js');
-const { getAge } = require('../functions/getAge');
+const { getAge } = require('../helpers/getAge');
 exports.get = (req, res) => {
   const id_doctor = req.params.id_doctor;
-  view.viewDoctorsAppiontments(id_doctor,(dataBaseConnectionErorr, appointments) => {
-    if (dataBaseConnectionErorr) res.status(500).send(dataBaseConnectionErorr);
+  view.currentPatient(id_doctor, (erorrpatient, patientdata) => {
+    if (erorrpatient) res.status(500).send(erorrpatient);
     else {
-      view.waitingPatients(id_doctor, (dataBaseConnectionErorrWaiting, waitingCount) => {
-        if (dataBaseConnectionErorrWaiting) res.status(500).send(dataBaseConnectionErorrWaiting);
-        if (appointments.length === 0) {
+      view.allPatients(id_doctor, (erorr, patientCount) => {
+        if (erorr) res.status(500).send(erorr);
+        if (patientdata.length === 0) {
           res.send('no appointments');
         } else {
-          const data = appointments.concat(waitingCount);
+          const data = patientdata.concat(patientCount);
           const dob = data[0].dob;
-          appointments[0] = Object.assign(appointments[0], { age: getAge(dob) });
-          res.send(data);
+          patientdata[0] = Object.assign(patientdata[0], {
+            age: getAge(dob)
+          });
+          view.waiting(id_doctor, (er, waitingCount) => {
+            if (er) res.status(500).send(er);
+            else {
+              const fullData = data.concat(waitingCount);
+              res.send(fullData);
+            }
+          });
         }
-
       });
     }
   });
