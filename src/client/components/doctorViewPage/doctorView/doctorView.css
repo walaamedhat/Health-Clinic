@@ -8,10 +8,12 @@
 }
 .appointmentNum {
   color: red;
+  margin: 0 5px;
 }
 .calenderD {
   height: 500px;
   overflow: scroll;
+  margin: 63px;
 }
 .circle {
   color: white;
@@ -124,7 +126,7 @@
 .bigcontainer {
   border-style: dotted;
   padding-top: 25px;
-  margin-bottom: 100px;
+  margin: 63px;
 }
 .first-elmDocView {
   display: flex;
